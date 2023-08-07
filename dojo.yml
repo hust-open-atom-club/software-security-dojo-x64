@@ -26,3 +26,7 @@ modules:
       - id: level-1-1
         name: Level 1.1
         description: "TODO"
+
+      - id: level-2-1
+        name: Level 2.1
+        description: "TODO"
