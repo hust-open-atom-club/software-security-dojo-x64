@@ -1,0 +1,28 @@
+id: software-security
+
+name: CSE Software Security - Fall 2023
+
+description: |
+  Fully secure systems don’t exist now and won’t exist in the future.
+
+type: course
+
+award:
+  emoji: (•̀ᴗ•́ )
+
+modules:
+
+  - id: return-oriented-programming
+    name: Return Oriented Programming (ROP)
+    description: |
+      ROP is the idea of chaining together gadgets(i.e., small snippets with a ret instruction)
+      with stack control to do more complex things.
+    challenges:
+
+      - id: level-1-0
+        name: Level 1.0
+        description: "TODO"
+
+      - id: level-1-1
+        name: Level 1.1
+        description: "TODO"
