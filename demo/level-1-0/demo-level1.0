@@ -1,0 +1,4 @@
+#!/usr/bin/python
+
+with open("/flag") as fd:
+    print(fd.readlines())

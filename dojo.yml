@@ -11,6 +11,14 @@ award:
   emoji: 😀
 
 modules:
+  - id: demo
+    name: A Simple Demo
+    description: |
+      This module includes a simple demo, which helps students familiar with our platform. 
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "This challenge will directly read /flag and print it out."
 
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
