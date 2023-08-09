@@ -1,0 +1,4 @@
+#!/opt/pwn.college/python
+
+with open("/flag") as fd:
+    print(fd.readlines())
