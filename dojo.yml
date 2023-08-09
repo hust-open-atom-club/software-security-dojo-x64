@@ -20,6 +20,11 @@ modules:
         name: Level 1.0
         description: "This challenge will directly read /flag and print it out."
 
+      - id: level-1-1
+        name: Level 1.1
+        description: "This challenge will directly read /flag and print it out."
+
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
