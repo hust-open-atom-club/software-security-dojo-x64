@@ -2,4 +2,4 @@
 
 if __name__ == '__main__':
     with open("/flag") as fd:
-        print(fd.read())
+        print(fd.read(), end="")
