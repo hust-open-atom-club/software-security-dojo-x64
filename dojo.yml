@@ -11,8 +11,8 @@ award:
   emoji: 😀
 
 modules:
-  - id: demo
-    name: A Simple Demo
+  - id: simple-demo
+    name: Simple Demo
     description: |
       本模块包含一个简单的演示，帮助学生更快地熟悉我们的平台。
     challenges:
