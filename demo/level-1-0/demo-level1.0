@@ -1,5 +1,11 @@
 #!/opt/pwn.college/python
 
 if __name__ == '__main__':
+    print("###")
+    print("### Welcome to ./demo_level1.0!")
+    print("###")
+    print("")
+    print("This challenge will directly read /flag and print it out.")
+
     with open("/flag") as fd:
         print(fd.read(), end="")
