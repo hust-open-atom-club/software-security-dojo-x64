@@ -1,9 +1,9 @@
 id: software-security
 
-name: CSE SCS2081 Software Security - Fall 2023
+name: CSE SCS2081 软件安全 - 秋 2023
 
 description: |
-  Fully secure systems don’t exist now and won’t exist in the future.
+  绝对安全的软件系统现在不存在，将来也不会存在。
 
 type: course
 
@@ -14,32 +14,31 @@ modules:
   - id: demo
     name: A Simple Demo
     description: |
-      This module includes a simple demo, which helps students familiar with our platform. 
+      本模块包含一个简单的演示，帮助学生更快地熟悉我们的平台。
     challenges:
       - id: level-1-0
         name: Level 1.0
-        description: "This challenge will directly read /flag and print it out."
+        description: "本关卡直接读取 /flag，并将其打印出来。"
 
       - id: level-1-1
         name: Level 1.1
-        description: "This challenge will directly read /flag and print it out."
+        description: "本关卡直接读取 /flag，并将其打印出来。"
 
 
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
-      ROP is the idea of chaining together gadgets(i.e., small snippets with a ret instruction)
-      with stack control to do more complex things.
+      ROP 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。
     challenges:
 
       - id: level-1-0
         name: Level 1.0
-        description: "TODO"
+        description: ""
 
       - id: level-1-1
         name: Level 1.1
-        description: "TODO"
+        description: ""
 
       - id: level-2-1
         name: Level 2.1
-        description: "TODO"
+        description: ""
