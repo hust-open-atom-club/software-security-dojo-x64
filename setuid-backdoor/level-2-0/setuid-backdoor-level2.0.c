@@ -8,7 +8,7 @@ void print_desc()
 	printf("### Welcome to ./setuid-backdoor-level2.0!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will require you to understand some utilities and calculate the flag\n");
+	printf("This challenge will require you to understand some utilities and elaborately obtain the flag from these utilities\n");
 }
 
 int main()
@@ -33,7 +33,7 @@ int main()
 	}
 
 	printf("I just set the SUID bit on /usr/bin/rev\n");
-	printf("Try to understand /usr/bin/rev and calculate the flag\n");
+	printf("Try to understand /usr/bin/rev and elaborately obtain the flag\n");
 
 	return 0;
 }
