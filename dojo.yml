@@ -45,6 +45,14 @@ modules:
         name: Level 2.0
         description: "本关卡需要理解一些实用程序(如，/usr/bin/rev)，并巧妙利用该程序获取 /flag。"
 
+      - id: level-2-1
+        name: Level 2.1
+        description: "本关卡需要理解一些实用程序(如，/usr/bin/gzip)，并巧妙利用该程序获取 /flag。"
+
+      - id: level-2-2
+        name: Level 2.2
+        description: "本关卡需要理解一些实用程序(如，/usr/bin/date)，并巧妙利用该程序获取 /flag。"
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
