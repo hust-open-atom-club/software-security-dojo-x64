@@ -53,6 +53,26 @@ modules:
         name: Level 2.2
         description: "本关卡需要理解一些实用程序(如，/usr/bin/date)，并巧妙利用该程序获取 /flag。"
 
+      - id: level-3-0
+        name: Level 3.0
+        description: "本关卡需要通过一些实用程序(如，/usr/bin/chmod)巧妙地设置文件权限来读取 /flag。"
+
+      - id: level-3-1
+        name: Level 3.1
+        description: "本关卡需要通过一些实用程序(如，/usr/bin/chown)巧妙地设置文件权限来读取 /flag。"
+
+      - id: level-3-2
+        name: Level 3.2
+        description: "本关卡需要通过一些实用程序(如，/usr/bin/cp)巧妙地设置文件权限来读取 /flag。"
+
+      - id: level-4-0
+        name: Level 4.0
+        description: "本关卡设置一些程序解释器(如，/usr/bin/python)，并需要结合相应编程知识来读取 /flag。"
+
+      - id: level-4-1
+        name: Level 4.1
+        description: "本关卡设置一些程序解释器(如，/usr/bin/perl)，并需要结合相应编程知识来读取 /flag。"
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
