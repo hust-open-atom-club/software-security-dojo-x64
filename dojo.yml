@@ -37,8 +37,8 @@ modules:
         name: Level 1.1
         description: "本关卡设置一些实用程序(如，/usr/bin/vim)，帮助读取 /flag。"
 
-      - id: level-1-1
-        name: Level 1.1
+      - id: level-1-2
+        name: Level 1.2
         description: "本关卡设置一些实用程序(如，/usr/bin/hexedit)，帮助读取 /flag。"
 
       - id: level-2-0
