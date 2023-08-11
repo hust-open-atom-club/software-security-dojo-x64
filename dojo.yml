@@ -24,6 +24,14 @@ modules:
         name: Level 1.1
         description: "本关卡直接读取 /flag，并将其打印出来。"
 
+  - id: setuid-backdoor
+    name: SetUID Backdoor
+    description: |
+      SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡设置一些实用程序(/usr/bin/cat)，帮助读取 /flag。"
 
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
