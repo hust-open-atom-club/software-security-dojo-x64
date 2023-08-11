@@ -37,6 +37,10 @@ modules:
         name: Level 1.1
         description: "本关卡设置一些实用程序(/usr/bin/vim)，帮助读取 /flag。"
 
+      - id: level-2-0
+        name: Level 2.0
+        description: "本关卡需要理解一些实用程序(/usr/bin/rev)，并巧妙通过该程序计算 /flag。"
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
