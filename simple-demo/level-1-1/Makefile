@@ -1,4 +1,4 @@
-TARGET = demo-level1.1
+TARGET = simple-demo-level1.1
 CC     = gcc
 CFLAGS = -Wall -Wextra -Werror
 
