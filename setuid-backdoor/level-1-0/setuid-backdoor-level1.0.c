@@ -16,6 +16,8 @@ int main()
 	int ret;
 	struct stat cat;
 
+	print_desc();
+
 	ret = stat("/usr/bin/cat", &cat);
 
 	if (ret) {
