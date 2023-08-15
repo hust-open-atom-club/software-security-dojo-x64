@@ -93,4 +93,32 @@ modules:
 
       - id: level-3-1
         name: Level 3.1
-        description: "本关卡需利用基础的 ROP 知识劫持控制流来读取 /flag。"
+        description: "本关卡需利用基础的 ROP 知识 ret2text 劫持控制流来读取 /flag。"
+
+      - id: level-4-1
+        name: Level 4.1
+        description: "本关卡需利用基础的 ROP 知识 ret2shellcode 劫持控制流来读取 /flag。"
+      
+      - id: level-5-1
+        name: Level 5.1
+        description: "本关卡需利用基础的 ROP 知识 ret2syscall 劫持控制流来读取 /flag。"
+
+      - id: level-6-1
+        name: Level 6.1
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+
+      - id: level-6-2
+        name: Level 6.2
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+
+      - id: level-6-3
+        name: Level 6.3
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+
+      - id: level-6-4
+        name: Level 6.4
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+
+      - id: level-6-5
+        name: Level 6.5
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
