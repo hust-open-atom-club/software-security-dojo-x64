@@ -73,6 +73,12 @@ modules:
         name: Level 4.1
         description: "本关卡设置一些程序解释器(如，/usr/bin/perl)，并需要结合相应编程知识来读取 /flag。"
 
+    resources:
+        name: "Program Misuse - Privilege Escalation"
+        type: lecture
+        video: 438064585
+	playlist: BV1mj411M7NZ
+        
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
