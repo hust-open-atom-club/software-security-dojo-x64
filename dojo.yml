@@ -78,7 +78,6 @@ modules:
         type: lecture
         video: "438064585"
         playlist: "BV1mj411M7NZ"
-        slides: 1aiHdtSm8xoT0u2XcTo3qYGes5GY__-PK-FlVyNBQAfY
       - name: "References"
         type: markdown
         content: |
