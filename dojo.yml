@@ -78,6 +78,7 @@ modules:
         type: lecture
         video: 438064585
 	playlist: BV1mj411M7NZ
+        slide:
  
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
