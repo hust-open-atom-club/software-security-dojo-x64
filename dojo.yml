@@ -78,7 +78,12 @@ modules:
         type: lecture
         video: 438064585
         playlist: BV1mj411M7NZ
- 
+        slides: 1aiHdtSm8xoT0u2XcTo3qYGes5GY__-PK-FlVyNBQAfY
+      - name: "References"
+        type: markdown
+        content: |
+          - [Why You Can't Un-Root a Compromised Machine](https://gist.github.com/mudongliang/7b68290c2b4d5da0b7140c8b0e1827d0)
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
