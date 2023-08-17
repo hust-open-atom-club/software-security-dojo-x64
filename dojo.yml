@@ -73,6 +73,27 @@ modules:
         name: Level 4.1
         description: "本关卡设置一些程序解释器(如，/usr/bin/perl)，并需要结合相应编程知识来读取 /flag。"
 
+  - id: pwntools-tutorials
+    name: Pwntools Tutorials
+    description: |
+      Pwntools 是一个工具包（包含各种好用的小工具），旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。
+    challenge:
+  
+      # - id: level-1-0
+      #   name: Level 1.0
+      #   description: ""
+  
+      # - id: level-1-1
+      #   name: Level 1.1
+      #   description: ""
+  
+    resources:
+      - name: "References"
+        type: markdown
+        content: |
+          - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
+          - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
+
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
@@ -120,3 +141,23 @@ modules:
       - id: level-1-1
         name: Level 1.1
         description: "本关卡需注入并执行 shellcode 来读取 /flag。"
+
+  - id: non-control-data-attacks
+    name: Non-Control-Data Attacks
+    description: |
+      Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。
+    challenges:
+
+      # - id: level-1-0
+      #   name: Level 1.0
+      #   description: ""
+
+      # - id: level-1-1
+      #   name: Level 1.1
+      #   description: ""
+
+    resources:
+      - name: "References"
+        type: markdown
+        content: |
+          - [Non-Control-Data Attacks Are Realistic Threats](https://www.usenix.org/conference/14th-usenix-security-symposium/non-control-data-attacks-are-realistic-threats)
