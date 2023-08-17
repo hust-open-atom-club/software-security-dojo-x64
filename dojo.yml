@@ -159,9 +159,9 @@ modules:
       Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。
     challenges:
  
-      # - id: level-1-0
-      #   name: Level 1.0
-      #   description: ""
+      - id: level-1-0
+        name: Level 1.0
+        description: "模拟 CVE-2001-0144 通过缓冲区溢出来控制决策数据"
 
       # - id: level-1-1
       #   name: Level 1.1
