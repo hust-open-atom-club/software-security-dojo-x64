@@ -39,15 +39,15 @@ void print_flag()
 int bypass_me(char *buf)
 {
 	int flag = 1;
-	char num[5] = {'\0'};
+	int num;
 	
 	if (buf[0] != 'p' || buf[1] != 0x15) {
 		flag = 0;
 		goto out; 
 	}
 
-	memcpy(num, buf+2, 4);
-	if (atoi(num) != 123456789) {
+	memcpy(&num, buf+2, 4);
+	if (num != 123456789) {
 		flag = 0;
 		goto out;
 	}
@@ -70,6 +70,7 @@ int main()
 	fgets(buffer, sizeof(buffer), stdin);
 
 	if (bypass_me(buffer)) {
+		printf("reach here\n");
 		print_flag();
 	} else {
 		printf("You need to bypass some conditions to get the flag: \n");
