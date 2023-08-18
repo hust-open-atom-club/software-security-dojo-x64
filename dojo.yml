@@ -15,9 +15,9 @@ modules:
     name: Simple Demo
     description: |
       本模块包含一些简单的演示关卡，帮助学生更快地熟悉我们的平台。
-      关卡等级分布：
-      Level 1.0 - 直接读取 /flag，并将其打印出来（Python 语言）
-      Level 1.1 - 直接读取 /flag，并将其打印出来（C 语言）
+      - 关卡等级分布：
+        - Level 1.0 - 直接读取 /flag，并将其打印出来（Python 语言）
+        - Level 1.1 - 直接读取 /flag，并将其打印出来（C 语言）
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -31,19 +31,19 @@ modules:
     name: SetUID Backdoor
     description: |
       SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。
-      关卡等级分布：
-      Level 1.0 - 利用设置了 SUID 的 /usr/bin/cat 命令读取 /flag
-      Level 1.1 - 利用设置了 SUID 的 /usr/bin/vim 命令读取 /flag
-      Level 1.2 - 利用设置了 SUID 的 /usr/bin/hexedit 命令读取 /flag
-      Level 2.0 - 理解 /usr/bin/rev 功能，并通过设置了 SUID 的该命令获取 /flag
-      Level 2.1 - 理解 /usr/bin/gzip 功能，并通过设置了 SUID 的该命令获取 /flag
-      Level 2.2 - 理解 /usr/bin/date 功能，并通过设置了 SUID 的该命令获取 /flag
-      Level 3.0 - 学习 /usr/bin/chmod 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag
-      Level 3.1 - 学习 /usr/bin/chown 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag
-      Level 3.2 - 学习 /usr/bin/cp 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag
-      Level 4.0 - 学习 /usr/bin/python 解释器的语法，并编程实现获取 /flag
-      Level 4.1 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag
-      Level 4.2 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag
+      - 关卡等级分布：
+        - Level 1.0 - 利用设置了 SUID 的 /usr/bin/cat 命令读取 /flag
+        - Level 1.1 - 利用设置了 SUID 的 /usr/bin/vim 命令读取 /flag 
+        - Level 1.2 - 利用设置了 SUID 的 /usr/bin/hexedit 命令读取 /flag
+        - Level 2.0 - 理解 /usr/bin/rev 功能，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 2.1 - 理解 /usr/bin/gzip 功能，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 2.2 - 理解 /usr/bin/date 功能，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 3.0 - 学习 /usr/bin/chmod 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 3.1 - 学习 /usr/bin/chown 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 3.2 - 学习 /usr/bin/cp 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag 
+        - Level 4.0 - 学习 /usr/bin/python 解释器的语法，并编程实现获取 /flag 
+        - Level 4.1 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag 
+        - Level 4.2 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag
     challenges:
       - id: level-1-0
         name: Level 1.0
