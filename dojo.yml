@@ -146,7 +146,7 @@ modules:
   - id: shellcode-injection
     name: Shellcode Injection
     description: |
-      通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。
+      通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。  
       关卡等级分布：
       - Level 1.1 - TODO
     challenges:
