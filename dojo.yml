@@ -122,6 +122,7 @@ modules:
       \
       **关卡等级分布：**
       - Level 1.0 - TODO
+      - Level 1.0 - TODO
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -131,9 +132,9 @@ modules:
         name: Level 1.0
         description: "本关卡设置了一些条件，只有通过这些条件才能获得 /flag。"
   
-      # - id: level-1-1
-      #   name: Level 1.1
-      #   description: ""
+      - id: level-2-0
+        name: Level 1.1
+        description: ""
   
     resources:
       - name: "References"
