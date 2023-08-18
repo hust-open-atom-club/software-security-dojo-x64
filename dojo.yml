@@ -14,8 +14,10 @@ modules:
   - id: simple-demo
     name: Simple Demo
     description: |
-      本模块包含一些简单的演示关卡，帮助学生更快地熟悉我们的平台。  
-      关卡等级分布：
+      本模块包含一些简单的演示关卡，帮助学生更快地熟悉我们的平台。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.0 - 直接读取 /flag，并将其打印出来（Python 语言）
       - Level 1.1 - 直接读取 /flag，并将其打印出来（C 语言）
     challenges:
