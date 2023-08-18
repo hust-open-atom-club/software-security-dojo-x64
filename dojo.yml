@@ -104,6 +104,28 @@ modules:
         content: |
           - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
           - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
+  
+  - id: buffer-overflow
+    name: Buffer Overflow
+    description: |
+      利用缓冲区溢出漏洞，可以在 BSS、堆、栈上埋入精心构造的数据载荷，覆盖关键函数指针，最终劫持程序控制流。
+    challenges:
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需利用 ret2text 覆盖返回地址劫持控制流来读取 /flag。"
+
+      - id: level-2-1
+        name: Level 2.1
+        description: "本关卡需掌握一定的 ptmalloc2 基础知识，通过利用堆缓冲区溢出和 UAF 漏洞来读取 /flag。"
+  
+  - id: shellcode-injection
+    name: Shellcode Injection
+    description: |
+      通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。
+    challenges:
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需注入并执行 shellcode 来读取 /flag。"
 
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
@@ -134,28 +156,6 @@ modules:
       - id: level-2-5
         name: Level 2.5
         description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
-  
-  - id: buffer-overflow
-    name: Buffer Overflow
-    description: |
-      利用缓冲区溢出漏洞，可以在 BSS、堆、栈上埋入精心构造的数据载荷，覆盖关键函数指针，最终劫持程序控制流。
-    challenges:
-      - id: level-1-1
-        name: Level 1.1
-        description: "本关卡需利用 ret2text 覆盖返回地址劫持控制流来读取 /flag。"
-
-      - id: level-2-1
-        name: Level 2.1
-        description: "本关卡需掌握一定的 ptmalloc2 基础知识，通过利用堆缓冲区溢出和 UAF 漏洞来读取 /flag。"
-  
-  - id: shellcode-injection
-    name: Shellcode Injection
-    description: |
-      通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。
-    challenges:
-      - id: level-1-1
-        name: Level 1.1
-        description: "本关卡需注入并执行 shellcode 来读取 /flag。"
 
   - id: non-control-data-attacks
     name: Non-Control-Data Attacks
