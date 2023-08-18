@@ -32,8 +32,10 @@ modules:
   - id: setuid-backdoor
     name: SetUID Backdoor
     description: |
-      SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。  
-      关卡等级分布：
+      SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.0 - 利用设置了 SUID 的 /usr/bin/cat 命令读取 /flag
       - Level 1.1 - 利用设置了 SUID 的 /usr/bin/vim 命令读取 /flag 
       - Level 1.2 - 利用设置了 SUID 的 /usr/bin/hexedit 命令读取 /flag
@@ -109,8 +111,10 @@ modules:
   - id: pwntools-tutorials
     name: Pwntools Tutorials
     description: |
-      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。  
-      关卡等级分布：
+      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.0 - TODO 
     challenges:
   
@@ -132,11 +136,14 @@ modules:
   - id: buffer-overflow
     name: Buffer Overflow
     description: |
-      利用缓冲区溢出漏洞，可以在 BSS、堆、栈上埋入精心构造的数据载荷，覆盖关键函数指针，最终劫持程序控制流。  
-      关卡等级分布：
+      利用缓冲区溢出漏洞，可以在 BSS、堆、栈上埋入精心构造的数据载荷，覆盖关键函数指针，最终劫持程序控制流。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.1 - TODO
       - Level 2.1 - TODO
     challenges:
+
       - id: level-1-1
         name: Level 1.1
         description: "本关卡需利用 ret2text 覆盖返回地址劫持控制流来读取 /flag。"
@@ -149,7 +156,9 @@ modules:
     name: Shellcode Injection
     description: |
       通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。  
-      关卡等级分布：
+      \
+      \
+      **关卡等级分布：**
       - Level 1.1 - TODO
     challenges:
       - id: level-1-1
@@ -159,8 +168,10 @@ modules:
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
-      ROP 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。  
-      关卡等级分布：
+      ROP 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.1 - TODO
       - Level 2.1 - TODO
       - Level 2.2 - TODO
@@ -196,8 +207,10 @@ modules:
   - id: non-control-data-attacks
     name: Non-Control-Data Attacks
     description: |
-      Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。  
-      关卡等级分布：
+      Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。
+      \
+      \
+      **关卡等级分布：**
       - Level 1.0 - TODO
     challenges:
  
