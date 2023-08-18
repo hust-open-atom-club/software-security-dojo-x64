@@ -10,7 +10,7 @@ void print_desc()
 	printf("### Welcome to ./pwntools-tutorials-level1.0!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will just help you learn pwntools  that make you read the flag\n");
+	printf("This challenge will leverage pwntools to bypass some conditions, and then print the flag if successful\n");
 }
 
 void print_flag()
@@ -70,7 +70,6 @@ int main()
 	fgets(buffer, sizeof(buffer), stdin);
 
 	if (bypass_me(buffer)) {
-		printf("reach here\n");
 		print_flag();
 	} else {
 		printf("You need to bypass some conditions to get the flag: \n");
