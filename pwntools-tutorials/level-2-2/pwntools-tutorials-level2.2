@@ -227,9 +227,6 @@ class ASMChallenge(ASMBase):
     init_rsi = random.randint(0, 0x100000000)
     init_memory = {}
 
-    # users can write multiple instructions to archive this goal
-    # whitelist = ["xchg"]
-
     @property
     def description(self):
         return f"""
