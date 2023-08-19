@@ -122,7 +122,8 @@ modules:
       \
       **关卡等级分布：**
       - Level 1.0 - 利用 pwntools 生成特定输入绕过检查，并读取 /flag
-      - Level 2.0 - 利用 pwtools asm 生成特定指令来完成特定寄存器，并读取 /flag
+      - Level 2.0 - 利用 pwtools asm 生成特定指令来设置特定寄存器，通过检查后获取 /flag
+      - Level 2.1 - 利用 pwtools asm 生成特定指令来交换特定寄存器，通过检查后获取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -134,8 +135,12 @@ modules:
   
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡编写一些汇编指令，设置特定寄存器（如，rax），并读取 /flag。"
-  
+        description: "本关卡编写一些汇编指令，设置特定寄存器（如，rax），通过检查后获取 /flag。"
+
+      - id: level-2-1
+        name: Level 2.1
+        description: "本关卡编写一些汇编指令，交换特定寄存器的值（如，rax，rbx），通过检查后获取 /flag。"
+
     resources:
       - name: "References"
         type: markdown

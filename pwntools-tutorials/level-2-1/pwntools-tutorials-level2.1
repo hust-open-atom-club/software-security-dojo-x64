@@ -22,7 +22,9 @@ print = lambda text: builtin_print(re.sub("\n{2,}", "\n\n", textwrap.dedent(str(
 
 
 class ASMBase:
-
+    '''
+    Base Object of ASM Challenges
+    '''
     BASE_ADDR = 0x400000
     CODE_ADDR = BASE_ADDR
     LIB_ADDR = BASE_ADDR + 0x3000
@@ -214,24 +216,27 @@ class ASMBase:
 
 class ASMChallenge(ASMBase):
     """
-    Set the value of a specific register
+    Exchange the value of registers
     """
 
-    name = "pwntools-tutorials-level2.0"
-    init_rax = 0
+    name = "pwntools-tutorials-level2.1"
+    init_rax = random.randint(0, 0x100000000)
+    init_rbx = random.randint(0, 0x100000000)
     init_memory = {}
 
+    # users can write multiple instructions to archive this goal
+    # whitelist = ["xchg"]
 
     @property
     def description(self):
         return f"""
         In this level you will work with registers_use! Please set the following:
-        * rax = 0x12345678
+        * exchange the value of rax and rbx
         """
 
     def trace(self):
         self.start()
-        return self.rax == 0x12345678
+        return (self.rax == self.init_rbx and self.rbx == self.init_rax)
 
 def main():
     challenge = ASMChallenge()
