@@ -150,8 +150,8 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - TODO
-      - Level 2.0 - TODO
+      - Level 1.0 - 利用栈溢出覆盖返回地址，劫持控制流来读取 /flag
+      - Level 2.0 - 利用堆缓冲区溢出和 UAF 漏洞来读取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -159,11 +159,11 @@ modules:
 
       - id: level-1-0
         name: Level 1.0
-        description: "本关卡需利用 ret2text 覆盖返回地址劫持控制流来读取 /flag。"
+        description: "本关卡需掌握 ret2text 基础知识覆盖返回地址，利用后门函数读取 /flag。"
 
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡需掌握一定的 ptmalloc2 基础知识，通过利用堆缓冲区溢出和 UAF 漏洞来读取 /flag。"
+        description: "本关卡需掌握一定的 ptmalloc2 基础知识，利用堆溢出和 UAF 来读取 /flag。"
   
   - id: shellcode-injection
     name: Shellcode Injection
@@ -172,14 +172,14 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.1 - TODO
+      - Level 1.0 - 本关卡需掌握读取 /flag 的 shellcode 的编写方法
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
     challenges:
-      - id: level-1-1
-        name: Level 1.1
-        description: "本关卡需注入并执行 shellcode 来读取 /flag。"
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡需利用栈溢出漏洞，注入并执行 shellcode 来读取 /flag。"
 
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
@@ -188,20 +188,23 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.1 - TODO
-      - Level 2.1 - TODO
-      - Level 2.2 - TODO
-      - Level 2.3 - TODO
-      - Level 2.4 - TODO
-      - Level 2.5 - TODO
+      - Level 1.0 - 本关卡需学习 ret2syscall 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.0 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.1 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.2 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.3 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.4 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
     challenges:
-
-      - id: level-1-1
-        name: Level 1.1
+      - id: level-1-0
+        name: Level 1.0
         description: "本关卡需利用基础的 ROP 知识 ret2syscall 劫持控制流来读取 /flag。"
+
+      - id: level-2-0
+        name: Level 2.0
+        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
 
       - id: level-2-1
         name: Level 2.1
@@ -219,9 +222,6 @@ modules:
         name: Level 2.4
         description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
 
-      - id: level-2-5
-        name: Level 2.5
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
 
   - id: non-control-data-attacks
     name: Non-Control-Data Attacks
