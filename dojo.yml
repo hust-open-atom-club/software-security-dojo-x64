@@ -177,11 +177,11 @@ modules:
         description: "本关卡设置一些程序解释器(如，/usr/bin/ruby)，并需要结合相应编程知识来读取 /flag。"
 
     resources:
-      # - name: "SetUID"
-      #   type: lecture
+      - name: "Linux 权限管理与SetUID"
+        type: lecture
       #   video: "438064585"
       #   playlist: "BV1mj411M7NZ"
-      #   slides: 1aiHdtSm8xoT0u2XcTo3qYGes5GY__-PK-FlVyNBQAfY
+        slides: 8ix3hd41d74b6e1a54c8f9fccbd3e60b34d33
       - name: "References"
         type: markdown
         content: |
