@@ -125,7 +125,10 @@ modules:
       - Level 2.0 - 利用 pwtools asm 生成特定指令来设置特定寄存器，通过检查后获取 /flag
       - Level 2.1 - 利用 pwtools asm 生成特定指令来交换特定寄存器，通过检查后获取 /flag
       - Level 2.2 - 利用 pwtools asm 生成特定指令来计算特定公式，结果通过检查后获取 /flag
-      - Level 2.3 - 利用 pwtools asm 生成特定指令来设置特定内存，通过检查后获取 /flag
+      - Level 2.3 - 利用 pwtools asm 生成特定指令来设置特定全局数据区域，通过检查后获取 /flag
+      - Level 2.4 - 利用 pwtools asm 生成特定指令来设置特定栈内存区域，通过检查后获取 /flag
+      - Level 2.5 - if statement ASMLevel18
+      - Level 2.6 - for statement
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -149,7 +152,11 @@ modules:
 
       - id: level-2-3
         name: Level 2.3
-        description: "本关卡编写一些汇编指令，设置特定内存，结果通过检查后获取 /flag。"
+        description: "本关卡编写一些汇编指令，设置特定全局数据区域，结果通过检查后获取 /flag。"
+
+      - id: level-2-4
+        name: Level 2.4
+        description: "本关卡编写一些汇编指令，设置特定栈内存区域，结果通过检查后获取 /flag。"
 
     resources:
       - name: "References"
