@@ -1,0 +1,252 @@
+#!/usr/bin/python
+
+import sys
+import re
+import collections
+import string
+import random
+import textwrap
+import pathlib
+from collections import defaultdict
+
+import pwnlib
+import pwnlib.asm
+from unicorn import *
+from unicorn.x86_const import *
+from capstone import *
+
+
+pwnlib.context.context.update(arch="amd64")
+builtin_print = print
+print = lambda text: builtin_print(re.sub("\n{2,}", "\n\n", textwrap.dedent(str(text))))
+
+
+class ASMBase:
+    '''
+    Base Object of ASM Challenges
+    '''
+    BASE_ADDR = 0x400000
+    CODE_ADDR = BASE_ADDR
+    LIB_ADDR = BASE_ADDR + 0x3000
+    DATA_ADDR = BASE_ADDR + 0x4000
+    BASE_STACK = 0x7FFFFF000000
+    RSP_INIT = BASE_STACK + 0x200000
+    REG_MAP = {
+        "rax": UC_X86_REG_RAX,
+        "rbx": UC_X86_REG_RBX,
+        "rcx": UC_X86_REG_RCX,
+        "rdx": UC_X86_REG_RDX,
+        "rsi": UC_X86_REG_RSI,
+        "rdi": UC_X86_REG_RDI,
+        "rbp": UC_X86_REG_RBP,
+        "rsp": UC_X86_REG_RSP,
+        "r8": UC_X86_REG_R8,
+        "r9": UC_X86_REG_R9,
+        "r10": UC_X86_REG_R10,
+        "r11": UC_X86_REG_R11,
+        "r12": UC_X86_REG_R12,
+        "r13": UC_X86_REG_R13,
+        "r14": UC_X86_REG_R14,
+        "r15": UC_X86_REG_R15,
+        "rip": UC_X86_REG_RIP,
+        "efl": UC_X86_REG_EFLAGS,
+        "cs": UC_X86_REG_CS,
+        "ds": UC_X86_REG_DS,
+        "es": UC_X86_REG_ES,
+        "fs": UC_X86_REG_FS,
+        "gs": UC_X86_REG_GS,
+        "ss": UC_X86_REG_SS,
+    }
+
+    name = "pwntools-tutorials"
+
+    init_memory = {}
+    secret_key = random.randint(0, 0xFFFFFFFFFFFFFFFF)
+
+    whitelist = None
+    blacklist = None
+
+    def __init__(self, asm=None):
+        self.asm = asm
+
+        self.emu = None
+
+        self.init()
+
+    @property
+    def description(self):
+        raise NotImplementedError
+
+
+    @property
+    def init_register_values(self):
+        '''
+        init_{register_name} is useful to initialize the value of these registers.
+        '''
+        return {
+            attr: getattr(self, attr)
+            for attr in dir(self)
+            if attr.startswith("init_") and attr[5:] in self.REG_MAP
+        }
+
+    def trace(self):
+        raise NotImplementedError
+
+    def init(self, *args, **kwargs):
+        pass
+
+    def create(self, *args, **kwargs):
+        self.init(*args, **kwargs)
+
+        self.emu = Uc(UC_ARCH_X86, UC_MODE_64)
+        self.emu.mem_map(self.BASE_ADDR, 2 * 1024 * 1024)
+        self.emu.mem_write(self.CODE_ADDR, self.asm)
+        self.emu.mem_map(self.BASE_STACK, 2 * 1024 * 1024)
+        self.rsp = self.RSP_INIT
+
+        for register, value in self.init_register_values.items():
+            setattr(self, register[5:], value)
+
+        for address, value in self.init_memory.items():
+            self[address] = value
+
+        if self.whitelist is not None:
+            self.emu.hook_add(UC_HOOK_CODE, self.whitelist_hook)
+        if self.blacklist is not None:
+            self.emu.hook_add(UC_HOOK_CODE, self.blacklist_hook)
+
+    def start(self, begin_until=None):
+        if begin_until is None:
+            begin_until = (self.CODE_ADDR, self.CODE_ADDR + len(self.asm))
+        begin, until = begin_until
+        self.emu.emu_start(begin, until)
+
+    def run(self):
+        print(
+            f"""
+            Welcome to {self.name}
+            ==================================================
+
+            To interact with any level you will send raw bytes over stdin to this program.
+            To efficiently solve these problems, first run it once to see what you need
+            then craft, assemble, and pipe your bytes to this program.
+            """
+        )
+
+        print(self.description)
+
+        if not self.asm:
+            print("Please give me your assembly in bytes (up to 0x1000 bytes): ")
+            self.asm = sys.stdin.buffer.read1(0x1000)
+
+            # assuming no hex-only assembly challenges
+            if all((c in (string.hexdigits+string.whitespace).encode()) for c in self.asm):
+                print("")
+                print("ERROR: It looks like your input is hex-ecoded! Please provide")
+                print("the actual unencoded bytes!")
+                sys.exit(1)
+
+            if all((c in string.printable.encode()) for c in self.asm):
+                print("")
+                print("WARNING: It looks like your input might not be assembled binary")
+                print("code, but actual assembly source. This challenge needs the")
+                print("raw binary assembled code as input.")
+                print("")
+
+        self.create()
+
+        print("Executing your code...")
+        print("---------------- CODE ----------------")
+        md = Cs(CS_ARCH_X86, CS_MODE_64)
+        for i in md.disasm(self.asm, self.CODE_ADDR):
+            print("0x%x:\t%-6s\t%s" % (i.address, i.mnemonic, i.op_str))
+        print("--------------------------------------")
+
+        try:
+            won = self.trace()
+        except Exception as e:
+            print(f"ERROR: {e}")
+            won = False
+
+        if won:
+            print(open("/flag").read())
+        else:
+            print("Sorry, no flag :(.")
+        return won
+
+
+    def __getattr__(self, name):
+        '''
+        name can be eax or init_eax
+        '''
+        if name in self.REG_MAP:
+            return self.emu.reg_read(self.REG_MAP[name])
+        if name in self.init_register_values:
+            return self.init_register_values[name]
+        raise AttributeError
+
+    def __setattr__(self, name, value):
+        if name in self.REG_MAP:
+            return self.emu.reg_write(self.REG_MAP[name], value)
+        return super().__setattr__(name, value)
+
+    def __getitem__(self, key):
+        return self.emu.mem_read(key.start, key.stop - key.start)
+
+    def __setitem__(self, key, value):
+        self.emu.mem_write(key, value)
+
+    def blacklist_hook(self, uc, address, size, user_data):
+        md = Cs(CS_ARCH_X86, CS_MODE_64)
+        i = next(md.disasm(uc.mem_read(address, size), address))
+
+        if i.mnemonic in self.blacklist:
+            uc.emu_stop()
+            raise Exception(f"fail: this instruction is not allowed: {i.mnemonic}")
+
+    def whitelist_hook(self, uc, address, size, user_data):
+        whitelist = self.whitelist + ["int3"]
+        md = Cs(CS_ARCH_X86, CS_MODE_64)
+        i = next(md.disasm(uc.mem_read(address, size), address))
+
+        if i.mnemonic not in whitelist:
+            uc.emu_stop()
+            raise Exception(f"fail: this instruction is not allowed: {i.mnemonic}")
+
+
+class ASMChallenge(ASMBase):
+    """
+    Manipulate stack region
+    """
+
+    name = "pwntools-tutorials-level2.5"
+    
+    init_rsp = ASMBase.RSP_INIT - 0x8
+    mem_rsp = random.randint(0x7000000000000000, 0xFFFFFFFFFFFFFFFF)
+
+    @property
+    def init_memory(self):
+        return {self.init_rsp: self.mem_rsp.to_bytes(8, "little")}
+
+    @property
+    def description(self):
+        return f"""
+        In this level you will work with if condition! Please perform the following:
+        * the top value of the stack = abs(the top value of the stack)
+        """
+
+    def trace(self):
+        self.start()
+        return self[self.init_rsp : self.init_rsp + 8] == (
+            self.mem_rsp if self.mem_rsp < 0x8000000000000000 else  2**64 - self.mem_rsp
+        ).to_bytes(8, "little")
+
+def main():
+    challenge = ASMChallenge()
+    try:
+        challenge.run()
+    except KeyboardInterrupt:
+        sys.exit(-1)
+
+if __name__ == '__main__':
+    main()
