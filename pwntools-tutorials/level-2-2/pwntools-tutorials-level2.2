@@ -2,12 +2,9 @@
 
 import sys
 import re
-import collections
 import string
 import random
 import textwrap
-import pathlib
-from collections import defaultdict
 
 import pwnlib
 import pwnlib.asm
@@ -230,7 +227,7 @@ class ASMChallenge(ASMBase):
     @property
     def description(self):
         return f"""
-        In this level you will work with registers_use! Please set the following:
+        In this level you need to craft assembly code to complete the following operations:
         * rax = rax % rbx + rcx - rsi
 
         We already set the following in preparation for your code:

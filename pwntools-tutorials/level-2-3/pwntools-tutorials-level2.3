@@ -2,12 +2,9 @@
 
 import sys
 import re
-import collections
 import string
 import random
 import textwrap
-import pathlib
-from collections import defaultdict
 
 import pwnlib
 import pwnlib.asm
@@ -229,8 +226,8 @@ class ASMChallenge(ASMBase):
     @property
     def description(self):
         return f"""
-        In this level you will work with memory_use! Please perform the following:
-        * copy 8-bytes memory starting at 0x404000 and 8-bytes memory starting at 0x405000
+        In this level you need to craft assembly code to complete the following operations:
+        * copy 8-bytes memory starting at 0x404000 to 8-bytes memory starting at 0x405000
         """
 
     def trace(self):

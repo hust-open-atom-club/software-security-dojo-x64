@@ -2,12 +2,9 @@
 
 import sys
 import re
-import collections
 import string
 import random
 import textwrap
-import pathlib
-from collections import defaultdict
 
 import pwnlib
 import pwnlib.asm
@@ -232,7 +229,7 @@ class ASMChallenge(ASMBase):
     @property
     def description(self):
         return f"""
-        In this level you will work with stack! Please perform the following:
+        In this level you need to craft assembly code to complete the following operations:
         * the top value of the stack = the top value of the stack - rbx
 
         Tips: perfer push and pop instructions, other than directly [esp] dereference
