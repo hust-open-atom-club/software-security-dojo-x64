@@ -32,6 +32,79 @@ modules:
         name: Level 1.1
         description: "本关卡直接读取 /flag，并将其打印出来。"
 
+    resources:
+      - name: "0 课程要求"
+        type: lecture
+      #  video: "438064585"
+      #  playlist: "BV1mj411M7NZ"
+        slides: e8c11035dc67a5c4042a8858657c7c0d85a18
+
+  - id: pwntools-tutorials
+    name: Pwntools Tutorials
+    description: |
+      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 利用 pwntools 生成特定输入绕过检查，并读取 /flag
+      - Level 2.0 - 利用 pwtools asm 生成特定指令来设置特定寄存器，通过检查后获取 /flag
+      - Level 2.1 - 利用 pwtools asm 生成特定指令来交换特定寄存器，通过检查后获取 /flag
+      - Level 2.2 - 利用 pwtools asm 生成特定指令来计算特定公式，结果通过检查后获取 /flag
+      - Level 2.3 - 利用 pwtools asm 生成特定指令来设置特定全局数据区域，通过检查后获取 /flag
+      - Level 2.4 - 利用 pwtools asm 生成特定指令来设置特定栈内存区域，通过检查后获取 /flag
+      - Level 2.5 - 利用 pwtools asm 利用 if 语句来计算特定公式，结果通过检查后获取 /flag
+      - Level 2.6 - 利用 pwtools asm 利用 for 循环来计算特定公式，结果通过检查后获取 /flag
+      - 除此之外，pwntools 还有一些其他功能，如EFL解析（elf-crackme 关卡会用到），cyclic（缓冲区溢出关卡会用到）and ，GDB调试等。
+      \
+      \
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      
+    challenges:
+  
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡设置了一些条件，只有通过这些条件才能获得 /flag。"
+  
+      - id: level-2-0
+        name: Level 2.0
+        description: "本关卡编写一些汇编指令，设置特定寄存器（如，rax），通过检查后获取 /flag。"
+
+      - id: level-2-1
+        name: Level 2.1
+        description: "本关卡编写一些汇编指令，交换特定寄存器的值（如，rax，rbx），通过检查后获取 /flag。"
+
+      - id: level-2-2
+        name: Level 2.2
+        description: "本关卡编写一些汇编指令，计算一个特定公式，结果通过检查后获取 /flag。"
+
+      - id: level-2-3
+        name: Level 2.3
+        description: "本关卡编写一些汇编指令，设置特定全局数据区域，结果通过检查后获取 /flag。"
+
+      - id: level-2-4
+        name: Level 2.4
+        description: "本关卡编写一些汇编指令，设置特定栈内存区域，结果通过检查后获取 /flag。"
+
+      - id: level-2-5
+        name: Level 2.5
+        description: "本关卡编写 if 语句，设置特定栈内存区域，结果通过检查后获取 /flag。"
+
+      - id: level-2-6
+        name: Level 2.6
+        description: "本关卡编写 for 循环，计算特定公式，结果通过检查后获取 /flag。"
+
+    resources:
+      - name: "汇编基础知识"
+        type: lecture
+      #  video: "438064585"
+      #  playlist: "BV1mj411M7NZ"
+        slides: 8ix3h68c59a8226ce472c95a053fb032d625b
+      - name: "References"
+        type: markdown
+        content: |
+          - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
+          - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
+  
   - id: setuid-backdoor
     name: SetUID Backdoor
     description: |
@@ -104,7 +177,7 @@ modules:
         description: "本关卡设置一些程序解释器(如，/usr/bin/ruby)，并需要结合相应编程知识来读取 /flag。"
 
     resources:
-      # - name: "Program Misuse - Privilege Escalation"
+      # - name: "SetUID"
       #   type: lecture
       #   video: "438064585"
       #   playlist: "BV1mj411M7NZ"
@@ -114,65 +187,6 @@ modules:
         content: |
           - [Why You Can't Un-Root a Compromised Machine](https://gist.github.com/mudongliang/7b68290c2b4d5da0b7140c8b0e1827d0)
 
-  - id: pwntools-tutorials
-    name: Pwntools Tutorials
-    description: |
-      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。
-      \
-      \
-      **关卡等级分布：**
-      - Level 1.0 - 利用 pwntools 生成特定输入绕过检查，并读取 /flag
-      - Level 2.0 - 利用 pwtools asm 生成特定指令来设置特定寄存器，通过检查后获取 /flag
-      - Level 2.1 - 利用 pwtools asm 生成特定指令来交换特定寄存器，通过检查后获取 /flag
-      - Level 2.2 - 利用 pwtools asm 生成特定指令来计算特定公式，结果通过检查后获取 /flag
-      - Level 2.3 - 利用 pwtools asm 生成特定指令来设置特定全局数据区域，通过检查后获取 /flag
-      - Level 2.4 - 利用 pwtools asm 生成特定指令来设置特定栈内存区域，通过检查后获取 /flag
-      - Level 2.5 - 利用 pwtools asm 利用 if 语句来计算特定公式，结果通过检查后获取 /flag
-      - Level 2.6 - 利用 pwtools asm 利用 for 循环来计算特定公式，结果通过检查后获取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
-    challenges:
-  
-      - id: level-1-0
-        name: Level 1.0
-        description: "本关卡设置了一些条件，只有通过这些条件才能获得 /flag。"
-  
-      - id: level-2-0
-        name: Level 2.0
-        description: "本关卡编写一些汇编指令，设置特定寄存器（如，rax），通过检查后获取 /flag。"
-
-      - id: level-2-1
-        name: Level 2.1
-        description: "本关卡编写一些汇编指令，交换特定寄存器的值（如，rax，rbx），通过检查后获取 /flag。"
-
-      - id: level-2-2
-        name: Level 2.2
-        description: "本关卡编写一些汇编指令，计算一个特定公式，结果通过检查后获取 /flag。"
-
-      - id: level-2-3
-        name: Level 2.3
-        description: "本关卡编写一些汇编指令，设置特定全局数据区域，结果通过检查后获取 /flag。"
-
-      - id: level-2-4
-        name: Level 2.4
-        description: "本关卡编写一些汇编指令，设置特定栈内存区域，结果通过检查后获取 /flag。"
-
-      - id: level-2-5
-        name: Level 2.5
-        description: "本关卡编写 if 语句，设置特定栈内存区域，结果通过检查后获取 /flag。"
-
-      - id: level-2-5
-        name: Level 2.6
-        description: "本关卡编写 for 循环，计算特定公式，结果通过检查后获取 /flag。"
-
-    resources:
-      - name: "References"
-        type: markdown
-        content: |
-          - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
-          - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
-  
   - id: buffer-overflow
     name: Buffer Overflow
     description: |
