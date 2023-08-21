@@ -226,6 +226,7 @@ modules:
       - Level 1.1 - 利用栈溢出覆盖局部函数指针变量，劫持控制流来读取 /flag
       - Level 1.2 - 利用栈溢出覆盖返回地址，劫持控制流来读取 /flag
       - Level 2.0 - 利用堆缓冲区溢出和 UAF 漏洞来读取 /flag
+      - Level 3.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -246,7 +247,17 @@ modules:
       - id: level-2-0
         name: Level 2.0
         description: "本关卡需掌握一定的 ptmalloc2 基础知识，利用堆溢出和 UAF 来读取 /flag。"
-  
+      
+      - id: level-3-0
+        name: Level 3.0
+        description: "本关卡在没有源码辅助的基础上，使用 cylic 和 coredump 基础知识自动化寻找返回地址，利用栈溢出来读取 /flag。"
+
+    resources:
+      - name: "References"
+        type: markdown
+        content: |
+          - [Use pwntools for your exploits](https://mudongliang.github.io/2021/05/11/use-pwntools-for-your-exploits.html)
+
   - id: shellcode-injection
     name: Shellcode Injection
     description: |
