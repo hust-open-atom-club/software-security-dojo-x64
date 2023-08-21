@@ -7,11 +7,10 @@
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./pwntools-tutorials-level1.0!\n");
+	printf("### Welcome to ./pwntools-tutorials-level1.1!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will leverage pwntools to bypass some conditions, and then print the flag if successful\n");
-	printf("Enter your input> \n");
 }
 
 void print_flag()
@@ -32,20 +31,34 @@ void print_flag()
 		fclose(fp);
 	}
 	
-	printf("%s", flag);
+	printf("%s\n", flag);
 
 	fclose(fp);
 }
 
 int bypass_me(char *buf)
 {
-	unsigned int magic = 0xdeadbeef;
+	int flag = 1;
+	int num;
 	
-	if (!strncmp(buf, (char *)&magic, 4)) {
-		return 1;
+	if (buf[0] != 'p' || buf[1] != 0x15) {
+		flag = 0;
+		goto out; 
+	}
+
+	memcpy(&num, buf+2, 4);
+	if (num != 123456789) {
+		flag = 0;
+		goto out;
+	}
+
+	if (strncmp(buf+6, "Bypass Me:)", 11)) {
+		flag = 0;
+		goto out;
 	}
 	
-	return 0;
+out:
+	return flag;
 }
 
 int main()
