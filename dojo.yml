@@ -197,6 +197,22 @@ modules:
         content: |
           - [Why You Can't Un-Root a Compromised Machine](https://gist.github.com/mudongliang/7b68290c2b4d5da0b7140c8b0e1827d0)
 
+  - id: elf-crackme
+    name: ELF CrakeMe
+    description: |
+      学习并修改 ELF 可执行文件格式
+      **关卡等级分布：**
+      - Level 1.0 - 利用栈溢出覆盖局部变量，通过检查后读取 /flag
+      \
+      \
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后利用 patch_binary 修改挑战题目的二进制文件，并获取 flag。**
+
+    challenges:
+
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡 XXX"
+
   - id: buffer-overflow
     name: Buffer Overflow
     description: |
