@@ -99,11 +99,16 @@ modules:
         description: "本关卡编写 for 循环，计算特定公式，结果通过检查后获取 /flag。"
 
     resources:
-      - name: "汇编基础知识"
+      - name: "Pwntools 使用教程"
         type: lecture
       #  video: "438064585"
       #  playlist: "BV1mj411M7NZ"
-        slides: 8ix3h68c59a8226ce472c95a053fb032d625b
+        slides: 8ix3hd077c6d708884e81bfe938af6896532d
+      #- name: "汇编基础知识"
+      #  type: lecture
+      #  video: "438064585"
+      #  playlist: "BV1mj411M7NZ"
+      #  slides: 8ix3h68c59a8226ce472c95a053fb032d625b
       - name: "References"
         type: markdown
         content: |
