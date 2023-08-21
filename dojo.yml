@@ -101,8 +101,8 @@ modules:
     resources:
       - name: "Pwntools 使用教程"
         type: lecture
-      #  video: "438064585"
-      #  playlist: "BV1mj411M7NZ"
+        video: "405113607"
+        playlist: "BV1oG411o7A4"
         slides: 8ix3hd077c6d708884e81bfe938af6896532d
       #- name: "汇编基础知识"
       #  type: lecture
