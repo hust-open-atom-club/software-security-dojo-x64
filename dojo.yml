@@ -37,7 +37,7 @@ modules:
         type: lecture
       #  video: "438064585"
       #  playlist: "BV1mj411M7NZ"
-        slides: e8c11035dc67a5c4042a8858657c7c0d85a18
+        slides: 8ix3h6e02cd34628d4dfe91cb29a7e42cd6b6
 
   - id: pwntools-tutorials
     name: Pwntools Tutorials
