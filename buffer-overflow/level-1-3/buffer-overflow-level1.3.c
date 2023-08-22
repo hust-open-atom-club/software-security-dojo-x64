@@ -2,9 +2,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-
-char *gift_string = "/flag";
 
 void init()
 {
@@ -16,22 +13,20 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./buffer-overflow-level1.3!\n");
+	printf("### Welcome to ./buffer-overflow-level1.2!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will directly overflow a function pointer to read flag\n");
+	printf("This challenge will directly overflow the return address to read flag\n");
 }
 
-void read_flag(char *filename)
+void read_flag()
 {
 	char flag[100];
 	FILE *file;
 
-	printf("filename %s\n", filename);
-
-	file = fopen(filename, "r");
+	file = fopen("/flag", "r");
 	if (file == NULL) {
-		printf("无法打开文件");
+		printf("无法打开文件\n");
 		exit(-1);
 	}
 
@@ -44,19 +39,16 @@ void read_flag(char *filename)
 
 int main()
 {
-        char filename[10] = "Makefile";
 	char buffer[0x10];
         
         init();
-        
-        print_desc();
+
+	print_desc();
 
         puts("Give me your input");
 	
 	scanf("%s", buffer); // vulnerable scanf
         
-        read_flag(filename);
-
 	puts("Bye bye~");
 
 	return 0;
