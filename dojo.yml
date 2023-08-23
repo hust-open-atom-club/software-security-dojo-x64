@@ -255,11 +255,15 @@ modules:
 
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡需掌握一定的 ptmalloc2 基础知识，利用堆溢出和 UAF 来读取 /flag。"
-
+        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数后读取 /flag。"
+      
       - id: level-2-1
         name: Level 2.1
-        description: "本关卡需掌握堆溢出知识覆盖堆上变量，利用后门函数后读取 /flag。"
+        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数覆盖堆上函数指针后读取 /flag。"
+
+      - id: level-2-x
+        name: Level 2.x
+        description: "本关卡需掌握一定的 ptmalloc2 基础知识，利用堆溢出和 UAF 来读取 /flag。"
       
       - id: level-3-0
         name: Level 3.0
