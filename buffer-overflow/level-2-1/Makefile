@@ -1,7 +1,7 @@
 TARGET = buffer-overflow-level2.1
 CC     = gcc
 CFLAGS = -Wall -Wextra -Werror
-SECFLAGS = -no-pie
+SECFLAGS =
 
 .PHONY: all clean
 

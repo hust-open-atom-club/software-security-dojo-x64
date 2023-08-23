@@ -1,5 +1,3 @@
-// gcc -no-pie ./babyheap.c -o babyheap
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -33,16 +31,22 @@ int read_int()
 	return atoi(buf);
 }
 
-void read_flag()
+void read_flag(char * filename)
 {
 	char flag[0x100];
 	int fd, size = 0;
 
-	fd = open("/flag", 0);
+	if (filename == NULL) {
+		puts("Invalid filename");
+		return;
+	}
+
+	fd = open(filename, 0);
 	if (fd < 0) {
 		puts("Open flag failed");
-		exit(-1);
+		return;
 	}
+	
 	size = read(fd, flag, 0x100);
 	write(1, flag, size);
 	close(fd);
