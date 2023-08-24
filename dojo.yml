@@ -275,6 +275,16 @@ modules:
         content: |
           - [Use pwntools for your exploits](https://mudongliang.github.io/2021/05/11/use-pwntools-for-your-exploits.html)
 
+  - id: integer-overflow
+    name: Integer Overflow
+    description: |
+      整数溢出出现于数值无法被对应的数据类型所表示，通常，整数溢出可能导致缓冲区溢出。 
+
+  - id: use-after-free
+    name: Use After Free
+    description: |
+      释放后使用这一漏洞类型属于实践类内存错误，在一个对象被释放后之后重新使用导致。此处还包含 Invalid Free 和 Double Free。
+
   - id: shellcode-injection
     name: Shellcode Injection
     description: |
@@ -294,7 +304,7 @@ modules:
   - id: return-oriented-programming
     name: Return Oriented Programming (ROP)
     description: |
-      ROP 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。
+      ROP 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。此处包含 ret2libc 攻击方式。
       \
       \
       **关卡等级分布：**
