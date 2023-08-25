@@ -230,7 +230,9 @@ modules:
       - Level 1.0 - 利用栈溢出覆盖局部变量，通过检查后读取 /flag
       - Level 1.1 - 利用栈溢出覆盖局部函数指针变量，劫持控制流来读取 /flag
       - Level 1.2 - 利用栈溢出覆盖返回地址，劫持控制流来读取 /flag
-      - Level 2.0 - 利用堆缓冲区溢出和 UAF 漏洞来读取 /flag
+      - Level 2.0 - 利用堆缓冲区溢出覆盖堆上数据变量，劫持控制流来读取 /flag
+      - Level 2.1 - 利用堆缓冲区溢出覆盖堆上函数指针，劫持控制流来读取 /flag
+      - Level 2.2 - 利用 Off-by-one 漏洞覆盖全局数据变量，劫持控制流后读取 /flag
       - Level 3.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
       \
       \
@@ -261,9 +263,9 @@ modules:
         name: Level 2.1
         description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数覆盖堆上函数指针后读取 /flag。"
 
-      - id: level-2-x
-        name: Level 2.x
-        description: "本关卡需掌握一定的 ptmalloc2 基础知识，利用堆溢出和 UAF 来读取 /flag。"
+      - id: level-2-2
+        name: Level 2.2
+        description: "关于 Off-by-one 漏洞的利用"
       
       - id: level-3-0
         name: Level 3.0
@@ -278,8 +280,19 @@ modules:
   - id: integer-overflow
     name: Integer Overflow
     description: |
-      整数溢出出现于数值无法被对应的数据类型所表示，通常，整数溢出可能导致缓冲区溢出。 
-
+      整数溢出出现于数值无法被对应的数据类型所表示，通常，整数溢出可能导致缓冲区溢出。
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 利用整数溢出中的宽度溢出读取 /flag
+      - Level 1.1 - 结合整数溢出中的宽度溢出与缓冲区溢出读取 /flag
+      - Level 2.0 - 利用整数溢出中的计算溢出读取 /flag
+      - Level 2.1 - 结合整数溢出中的计算溢出与缓冲区溢出读取 /flag
+      - Level 3.0 - 利用整数溢出中的符号溢出读取 /flag
+      - Level 3.1 - 结合整数溢出中的符号溢出与缓冲区溢出读取 /flag
+      \
+      \
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -289,6 +302,20 @@ modules:
     name: Use After Free
     description: |
       释放后使用这一漏洞类型属于实践类内存错误，在一个对象被释放后之后重新使用导致。此处还包含 Invalid Free 和 Double Free。
+
+  - id: other-vulnerabilities
+    name: Other Vulnerabilities
+    description: |
+      学习一些其他安全漏洞，如格式化字符串，未初始化漏洞，信息泄露，Off-by-one 漏洞。
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 关于格式化字符串
+      - Level 2.0 - 关于未初始化漏洞
+      - Level 3.0 - 关于信息泄露
+      \
+      \
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
 
   - id: shellcode-injection
     name: Shellcode Injection
@@ -347,30 +374,43 @@ modules:
         name: Level 2.4
         description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
 
-
-  - id: non-control-data-attacks
-    name: Non-Control-Data Attacks
-    description: |
-      Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。
-      \
-      \
-      **关卡等级分布：**
-      - Level 1.0 - TODO
-      \
-      \
+    - id: mitigation-bypass
+      name: Mitigation Bypass
+      description: |
+        学习与绕过一些安全防御机制，如栈保护（Stack Protector），地址空间随机化（ASLR），数据执行保护（DEP/NX）
+        \
+        \
+        **关卡等级分布：**
+        - Level 1.0 - 关于栈保护
+        - Level 2.0 - 关于地址随机化与 PIE
+        - Level 3.0 - 关于数据执行保护
+        \
+        \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
-    challenges:
+
+  # - id: non-control-data-attacks
+  #   name: Non-Control-Data Attacks
+  #   description: |
+  #     Non-Control-Data 攻击通过破坏各种应用程序数据，包括用户身份数据、配置数据、用户输入数据和决策数据，来完成攻击目标。
+  #     \
+  #     \
+  #     **关卡等级分布：**
+  #     - Level 1.0 - TODO
+  #     \
+  #     \
+  #     **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+  #   challenges:
  
-      - id: level-1-0
-        name: Level 1.0
-        description: "模拟 CVE-2001-0144 通过缓冲区溢出来控制决策数据"
+  #     - id: level-1-0
+  #       name: Level 1.0
+  #       description: "模拟 CVE-2001-0144 通过缓冲区溢出来控制决策数据"
 
-      # - id: level-1-1
-      #   name: Level 1.1
-      #   description: ""
+  #     # - id: level-1-1
+  #     #   name: Level 1.1
+  #     #   description: ""
 
-    resources:
-      - name: "References"
-        type: markdown
-        content: |
-          - [Non-Control-Data Attacks Are Realistic Threats](https://www.usenix.org/conference/14th-usenix-security-symposium/non-control-data-attacks-are-realistic-threats)
+  #   resources:
+  #     - name: "References"
+  #       type: markdown
+  #       content: |
+  #         - [Non-Control-Data Attacks Are Realistic Threats](https://www.usenix.org/conference/14th-usenix-security-symposium/non-control-data-attacks-are-realistic-threats)
