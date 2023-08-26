@@ -138,7 +138,7 @@ modules:
       - Level 3.2 - 学习 /usr/bin/cp 命令设置文件权限，并通过设置了 SUID 的该命令获取 /flag 
       - Level 4.0 - 学习 /usr/bin/python 解释器的语法，并编程实现获取 /flag 
       - Level 4.1 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag 
-      - Level 4.2 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag
+      - Level 4.2 - 学习 /usr/bin/ruby 解释器的语法，并编程实现获取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -345,11 +345,11 @@ modules:
       \
       **关卡等级分布：**
       - Level 1.0 - 本关卡需学习 ret2syscall 劫持控制流，构造 ROP 链来读取 /flag
-      - Level 2.0 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
-      - Level 2.1 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
-      - Level 2.2 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
-      - Level 2.3 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
-      - Level 2.4 - 本关卡需学习 ret2libc 劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.0 - 本关卡需学习 ret2libc，利用 ELF 现有函数劫持控制流，构造 ROP 链来读取 /flag
+      - Level 2.1 - 本关卡需学习 ret2libc，泄露并利用 libc 函数，构造 ROP 链来读取 /flag
+      - Level 2.2 - 本关卡需学习 ret2libc，利用 libc 函数，构造 ROP 链来读取 /flag
+      - Level 2.3 - 本关卡需学习 ret2libc，利用缓冲区溢出和格式化字符串漏洞，构造 ROP 链来读取 /flag
+      - Level 2.4 - 本关卡需学习 ret2libc，仅利用格式化字符串漏洞，绕过保护机制，构造 ROP 链来读取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
@@ -360,23 +360,23 @@ modules:
 
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+        description: "本关卡需学习 ret2libc，利用 ELF 现有函数劫持控制流，构造 ROP 链来读取 /flag。"
 
       - id: level-2-1
         name: Level 2.1
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+        description: "本关卡需学习 ret2libc，泄露并利用 libc 函数，构造 ROP 链来读取 /flag"
 
       - id: level-2-2
         name: Level 2.2
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+        description: "本关卡需学习 ret2libc，利用 libc 函数，构造 ROP 链来读取 /flag"
 
       - id: level-2-3
         name: Level 2.3
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+        description: "本关卡需学习 ret2libc，利用缓冲区溢出和格式化字符串漏洞，构造 ROP 链来读取 /flag"
 
       - id: level-2-4
         name: Level 2.4
-        description: "本关卡需利用基础的 ROP 知识 ret2libc 劫持控制流来读取 /flag。"
+        description: "本关卡需学习 ret2libc，仅利用格式化字符串漏洞，绕过保护机制，构造 ROP 链来读取 /flag"
 
     - id: mitigation-bypass
       name: Mitigation Bypass
