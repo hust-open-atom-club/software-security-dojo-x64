@@ -378,19 +378,19 @@ modules:
         name: Level 2.4
         description: "本关卡需学习 ret2libc，仅利用格式化字符串漏洞，绕过保护机制，构造 ROP 链来读取 /flag"
 
-    - id: mitigation-bypass
-      name: Mitigation Bypass
-      description: |
-        学习与绕过一些安全防御机制，如栈保护（Stack Protector），地址空间随机化（ASLR），数据执行保护（DEP/NX）
-        \
-        \
-        **关卡等级分布：**
-        - Level 1.0 - 关于栈保护
-        - Level 2.0 - 关于地址随机化与 PIE
-        - Level 3.0 - 关于数据执行保护
-        \
-        \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+  - id: mitigation-bypass
+    name: Mitigation Bypass
+    description: |
+      学习与绕过一些安全防御机制，如栈保护（Stack Protector），地址空间随机化（ASLR），数据执行保护（DEP/NX）
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 关于栈保护
+      - Level 2.0 - 关于地址随机化与 PIE
+      - Level 3.0 - 关于数据执行保护
+      \
+      \
+    **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
 
   # - id: non-control-data-attacks
   #   name: Non-Control-Data Attacks
