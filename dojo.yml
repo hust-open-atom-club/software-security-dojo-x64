@@ -109,11 +109,11 @@ modules:
         video: "405113607"
         playlist: "BV1oG411o7A4"
         slides: 8ix3hd077c6d708884e81bfe938af6896532d
-      #- name: "汇编基础知识"
-      #  type: lecture
-      #  video: "438064585"
-      #  playlist: "BV1mj411M7NZ"
-      #  slides: 8ix3h68c59a8226ce472c95a053fb032d625b
+      - name: "gdb 结合 pwntools 调试教程"
+       type: lecture
+       video: "532863345"
+       playlist: "BV1Du411N7c9"
+       #slides: 8ix3h68c59a8226ce472c95a053fb032d625b
       - name: "References"
         type: markdown
         content: |
