@@ -197,7 +197,7 @@ modules:
         type: lecture
       #   video: "438064585"
       #   playlist: "BV1mj411M7NZ"
-        slides: 8ix3hd41d74b6e1a54c8f9fccbd3e60b34d33
+        slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
       - name: "References"
         type: markdown
         content: |
