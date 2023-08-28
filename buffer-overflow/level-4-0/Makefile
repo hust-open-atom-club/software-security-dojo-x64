@@ -1,4 +1,4 @@
-TARGET = non-control-data-attacks-level1.0
+TARGET = buffer-overflow-level4.0
 CC     = gcc
 CFLAGS = -Wall -Wextra -Werror
 
