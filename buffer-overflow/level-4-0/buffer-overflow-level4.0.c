@@ -7,7 +7,7 @@ enum SSH_CMSG {
 	SSH_CMSG_AUTH_PASSWORD = 0x50,
 	SSH_CMSG_ATTACK
 };
-// 
+
 void print_flag()
 {
 	char *p;
