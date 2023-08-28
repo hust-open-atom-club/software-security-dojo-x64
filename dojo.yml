@@ -258,11 +258,11 @@ modules:
 
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数后读取 /flag。"
+        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数 edit_notebook 和 read_notebook 后读取 /flag。"
       
       - id: level-2-1
         name: Level 2.1
-        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数覆盖堆上函数指针后读取 /flag。"
+        description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数 edit_notebook 覆盖堆上函数指针后读取 /flag。"
 
       - id: level-2-2
         name: Level 2.2
