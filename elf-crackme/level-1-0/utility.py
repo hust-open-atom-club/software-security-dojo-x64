@@ -1,5 +1,5 @@
 def main():
-    file_path = "./elf_header"
+    file_path = "./elf-crackme-level1.0"
     
     try:
         with open(file_path, "r+b") as file:

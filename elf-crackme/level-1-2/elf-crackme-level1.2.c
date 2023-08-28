@@ -34,4 +34,3 @@ int main(){
 
 	return 0;
 }
-//gcc elf_header.c -o elf_header
