@@ -46,13 +46,13 @@ int bypass_me(char *buf)
 		goto out; 
 	}
 
-	memcpy(&num, buf+2, 4);
+	memcpy(&num, buf + 2, 4);
 	if (num != 123456789) {
 		flag = 0;
 		goto out;
 	}
 
-	if (strncmp(buf+6, "Bypass Me:)", 11)) {
+	if (strncmp(buf + 6, "Bypass Me:)", 11)) {
 		flag = 0;
 		goto out;
 	}

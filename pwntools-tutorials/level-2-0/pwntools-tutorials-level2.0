@@ -211,7 +211,7 @@ class ASMBase:
 
 class ASMChallenge(ASMBase):
     """
-    Set the value of a specific register
+    Set the value of a specific register, rax
     """
 
     name = "pwntools-tutorials-level2.0"

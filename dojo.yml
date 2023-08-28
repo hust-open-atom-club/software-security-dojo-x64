@@ -14,15 +14,15 @@ modules:
   - id: simple-demo
     name: Simple Demo
     description: |
-      本模块包含一些简单的演示关卡，帮助学生更快地熟悉我们的平台。
+      本模块包含一些简单的演示关卡，帮助学生更快地熟悉当前平台(https://hust.pwn.college)。
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 直接读取 /flag，并将其打印出来（Python 语言）
-      - Level 1.1 - 直接读取 /flag，并将其打印出来（C 语言）
+      - Level 1.0 - 直接读取 /flag，并将其打印出来（Python）
+      - Level 1.1 - 直接读取 /flag，并将其打印出来（C）
       \
       \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      **注：为了更有效地解决这些挑战关卡，首先运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -110,15 +110,16 @@ modules:
         playlist: "BV1oG411o7A4"
         slides: 8ix3hd077c6d708884e81bfe938af6896532d
       - name: "gdb 结合 pwntools 调试教程"
-       type: lecture
-       video: "532863345"
-       playlist: "BV1Du411N7c9"
-       #slides: 8ix3h68c59a8226ce472c95a053fb032d625b
+        type: lecture
+        video: "532863345"
+        playlist: "BV1Du411N7c9"
+        slides: 8ix3h99526e066f1646c9811a13688f6e7efb
       - name: "References"
         type: markdown
         content: |
           - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
           - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
+          - [GDB Cheat Sheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
   
   - id: setuid-backdoor
     name: SetUID Backdoor
