@@ -1,5 +1,19 @@
-file_path = "./elf-crackme-level1.2"
-def main():
+import hashlib
+import binascii
+
+file_path = "./elf_md5"
+def calculate_md5(data):
+    md5_hash = hashlib.md5(data).hexdigest()
+    return md5_hash
+
+def md5_check(hex_string):
+    hex_string = hex_string.replace(" ", "")  
+    binary_data = binascii.unhexlify(hex_string)
+    md5_result = calculate_md5(binary_data)
+    return md5_result
+    print("MD5 Hash:", md5_result)
+
+def patch():
     
     try:
         with open(file_path, "r+b") as file:
@@ -17,22 +31,24 @@ def main():
 def check():
     try:
          with open(file_path, "rb") as file:
-            position = 0x3e70
-            length = 16
+            position = 0x1060
+            length = 280
             file.seek(position)
             data_read = file.read(length)
-            provided_hex_value = "883f000000000000882f000000000000"
-            expected_value = bytes.fromhex(provided_hex_value)
-            if data_read == expected_value:
-                print("修复成功")
+            md5_2 = calculate_md5(data_read)
+            if md5_2 == "c167dcb0f90740af865511726a83e78e":
+                print("key:",a)
             else:
-                print("修复失败")
+                print(".text hash检验失败，请重新修改")
+
  
     except Exception as e:
         print("发生错误:", e)
 
 if __name__ == "__main__":
-    print("我们修改了Section Header 中的got表项的Address，Offset请尝试将他恢复，恢复后执行即可获得flag.")
+
+    print("Original .text hash is c167dcb0f90740af865511726a83e78e")
+    print("我们修改了.text中的某两个字节为66，请尝试找到并爆破出原来的结果，修复完成后，执行即可获得flag.")
     while True:
         print("请选择要执行的功能:")
         print("1. 修改 ELF 文件")
@@ -50,11 +66,5 @@ if __name__ == "__main__":
             break
         else:
             print("无效的选项，请重新输入。")
-
-
-
-
-
-
 
 

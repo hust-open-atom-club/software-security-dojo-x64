@@ -1,4 +1,4 @@
-file_path = "./elf_program_header_old"
+file_path = "./elf-crackme-level1.1"
 def main():
     
     try:

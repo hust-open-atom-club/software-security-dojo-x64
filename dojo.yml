@@ -213,7 +213,7 @@ modules:
       - Level 1.0 - 利用栈溢出覆盖局部变量，通过检查后读取 /flag
       \
       \
-      **注：为了更有效地解决这些挑战关卡，你首先需要执行scripts.py查看本关tips，通过提示信息并使用scripts.py修改挑战题目，修改成功后，运行 /challenge 目录下的挑战题目，即可获取 flag。**
+      **注：为了更有效地解决这些挑战关卡，你首先需要执行utility.py查看本关tips，通过提示信息并使用utility.py修改挑战题目，修改成功后，运行 /challenge 目录下的挑战题目，即可获取 flag。**
 
     challenges:
 

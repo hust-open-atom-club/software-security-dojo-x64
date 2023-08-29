@@ -1,5 +1,5 @@
 def main():
-    file_path = "./elf_header"
+    file_path = "./elf-crackme-level3.0"
     
     try:
         with open(file_path, "r+b") as file:
@@ -16,5 +16,6 @@ def main():
         print("发生错误:", e)
 
 if __name__ == "__main__":
+    print("我们提供了一个plt表损坏的binary，请大家根据plt表跳转顺序，使用脚本后执行，即可获得flag")
     main()
 
