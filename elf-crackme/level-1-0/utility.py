@@ -5,8 +5,8 @@ def main():
     
     try:
         with open(file_path, "r+b") as file:
-            position = int(input("Please provide the offset of ELF file in hex format, e.g., 0x1000"), 16)
-            new_data = int(input("Please provide the data byte by byte in hex format, e.g., 01"), 16)
+            position = int(input("Please provide the offset of ELF file in hex format, e.g., 0x1000\n"), 16)
+            new_data = int(input("Please provide the data byte by byte in hex format, e.g., 01\n"), 16)
             
             file.seek(position)
             file.write(bytes([new_data]))
