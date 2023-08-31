@@ -210,44 +210,56 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 学习并理解ELF header，修复binary，通过检查后读取 /flag
-      - Level 1.1 - 学习并理解Program header，修复binary，通过检查后读取 /flag
-      - Level 1.2 - 学习并理解Section header，修复binary，通过检查后读取 /flag
-      - Level 2.0 - 学习并理解.text段，修复binary，通过检查后读取 /flag
-      - Level 2.1 - 学习并理解.data段，修复binary，通过检查后读取 /flag
-      - Level 2.2 - 学习并理解pwntools脚本，修复binary，通过检查后读取 /flag
-      - Level 3.0 - 学习并理解plt跳转，修复binary，通过检查后读取 /flag
-      - Level 3.1 - 学习并理解plt，got跳转，修复binary，通过检查后读取 /flag
+      - Level 1.0 - 学习并理解 ELF 文件头，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 1.1 - 学习并理解程序头表，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 1.2 - 学习并理解节头表，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 2.0 - 学习并理解 .text 段，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 2.1 - 学习并理解 .data 段，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 2.2 - 编写程序进行遍历，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 3.0 - 学习并理解 plt 跳转，修复关卡可执行文件，通过检查后读取 /flag
+      - Level 3.1 - 学习并理解 plt，got 跳转，修复关卡可执行文件，通过检查后读取 /flag
       \
       \
-      **注：为了更有效地解决这些挑战关卡，你首先需要执行utility.py查看本关tips，通过提示信息并使用utility.py修改挑战题目，修改成功后，运行 /challenge 目录下的挑战题目，即可获取 flag。**
+      **注：为了更有效地解决这些挑战关卡，你首先需要执行 utility.py 查看关卡提示，根据提示信息利用 utility.py 修改关卡可执行文件，通过检查后即可获取 flag。**
 
     challenges:
 
       - id: level-1-0
         name: Level 1.0
-        description: "本关卡需要掌握ELF header中x86和x64的区别，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握 ELF 文件头中 x86 和 x64 之间的区别，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-1-1
         name: Level 1.1
-        description: "本关卡需要掌握Program header中Offset，VirtAddr，PhysAddr表项的含义，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握程序头表中 Offset,VirtAddr,PhysAddr 字段含义，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-1-2
         name: Level 1.2
-        description: "本关卡需要掌握Section header中Offset，VirtAddr，PhysAddr表项的含义，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握节头表中 Offset,VirtAddr,PhysAddr 字段含义，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-2-0
         name: Level 2.0
-        description: "本关卡需要掌握.text段，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握 .text 段，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-2-1
         name: Level 2.1
-        description: "本关卡需要掌握.data段，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握 .data 段，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-2-2
         name: Level 2.2
-        description: "本关卡需要掌握爆破脚本的编写，爆破完成后，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要编写程序，爆破相应位置，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-3-0
         name: Level 3.0
-        description: "本关卡需要掌握plt表的跳转，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握 plt 表的跳转，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
       - id: level-3-1
         name: Level 3.1
-        description: "本关卡需要掌握plt表和got表的跳转，使用utility.py修复binary后，执行即可获得flag。"
+        description: "本关卡需要掌握 plt 表和 got 表的跳转，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
+   resources:
+      #- name: "Linux ELF"
+      #  type: lecture
+      #   video: "438064585"
+      #   playlist: "BV1mj411M7NZ"
+      #  slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
+      - name: "References"
+        type: markdown
+        content: |
+          - [Concrete Value for fields in ELF format](https://github.com/WolfgangSt/libelf/blob/master/lib/elf_repl.h)
+
 
   - id: buffer-overflow
     name: Buffer Overflow
