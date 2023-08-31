@@ -210,7 +210,14 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 利用栈溢出覆盖局部变量，通过检查后读取 /flag
+      - Level 1.0 - 学习并理解ELF header，修复binary，通过检查后读取 /flag
+      - Level 1.1 - 学习并理解Program header，修复binary，通过检查后读取 /flag
+      - Level 1.2 - 学习并理解Section header，修复binary，通过检查后读取 /flag
+      - Level 2.0 - 学习并理解.text段，修复binary，通过检查后读取 /flag
+      - Level 2.1 - 学习并理解.data段，修复binary，通过检查后读取 /flag
+      - Level 2.2 - 学习并理解pwntools脚本，修复binary，通过检查后读取 /flag
+      - Level 3.0 - 学习并理解plt跳转，修复binary，通过检查后读取 /flag
+      - Level 3.1 - 学习并理解plt，got跳转，修复binary，通过检查后读取 /flag
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要执行utility.py查看本关tips，通过提示信息并使用utility.py修改挑战题目，修改成功后，运行 /challenge 目录下的挑战题目，即可获取 flag。**
@@ -219,7 +226,28 @@ modules:
 
       - id: level-1-0
         name: Level 1.0
-        description: "本关卡 XXX"
+        description: "本关卡需要掌握ELF header中x86和x64的区别，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需要掌握Program header中Offset，VirtAddr，PhysAddr表项的含义，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-1-2
+        name: Level 1.2
+        description: "本关卡需要掌握Section header中Offset，VirtAddr，PhysAddr表项的含义，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-2-0
+        name: Level 2.0
+        description: "本关卡需要掌握.text段，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-2-1
+        name: Level 2.1
+        description: "本关卡需要掌握.data段，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-2-2
+        name: Level 2.2
+        description: "本关卡需要掌握爆破脚本的编写，爆破完成后，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-3-0
+        name: Level 3.0
+        description: "本关卡需要掌握plt表的跳转，使用utility.py修复binary后，执行即可获得flag。"
+      - id: level-3-1
+        name: Level 3.1
+        description: "本关卡需要掌握plt表和got表的跳转，使用utility.py修复binary后，执行即可获得flag。"
 
   - id: buffer-overflow
     name: Buffer Overflow
