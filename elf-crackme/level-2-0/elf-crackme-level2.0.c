@@ -15,12 +15,11 @@ void init()
 
 void read_flag()
 {	
-	
 	char flag[100];
 	FILE *file = fopen("/flag","r");
-	
+
 	if(file == NULL){
-		printf("无法打开文件\n");
+		printf("[-] error in opening file\n");
 		exit(-1);
 	}
 	while(fgets(flag,sizeof(flag),file) != NULL){

@@ -58,7 +58,7 @@ if __name__ == "__main__":
         choice = input("请输入选项数字: ")
         
         if choice == "1":
-            main()
+            patch()
         elif choice == "2":
             check()
         elif choice == "3":
