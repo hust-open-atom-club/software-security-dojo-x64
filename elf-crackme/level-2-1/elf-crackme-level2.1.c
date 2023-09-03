@@ -27,7 +27,6 @@ void read_flag()
 	}
 	fclose(file);
 }
-
 int main(){
 	init();
 

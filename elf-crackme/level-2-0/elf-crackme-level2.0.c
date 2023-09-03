@@ -30,7 +30,7 @@ void read_flag()
 int main(){
 	init();
 
-	if( a + b == 8){
+	if( a + b != 8){
 		read_flag();
 	}else{
 		puts("No,No,No......");
