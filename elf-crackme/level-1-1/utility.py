@@ -1,3 +1,4 @@
+#!/opt/pwn.college/python
 file_path = "./elf-crackme-level1.1"
 def main():
     

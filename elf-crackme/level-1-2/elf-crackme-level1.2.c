@@ -8,7 +8,6 @@ void init()
 	setvbuf(stdin,0,2,0);
 	setvbuf(stdout,0,2,0);
 	setvbuf(stderr,0,2,0);
-	puts("哪一个才是真正的我？\n");
 }
 
 void read_flag()
@@ -17,7 +16,7 @@ void read_flag()
 	FILE *file = fopen("/flag","r");
 	
 	if(file == NULL){
-		printf("无法打开文件\n");
+		printf("[-] error in opening file\n");
 		exit(-1);
 	}
 	while(fgets(flag,sizeof(flag),file) != NULL){

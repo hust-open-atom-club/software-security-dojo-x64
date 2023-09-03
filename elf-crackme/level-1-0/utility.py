@@ -6,10 +6,16 @@ def main():
     try:
         with open(file_path, "r+b") as file:
             position = 0x4 
-            new_data = 0x1   # 将要写入的数据设置为0x66 0x66
+            new_data = 0x2  
             
             file.seek(position)
-            file.write(new_data.to_bytes(1, byteorder='little'))  # 使用little-endian字节顺序写入两个字节
+            file.write(new_data.to_bytes(1, byteorder='little')) 
+            
+            
+            position_2 = 0x12
+            new_data_2 = 0x3e
+            file.seek(position_2)
+            file.write(new_data_2.to_bytes(1, byteorder='little'))  
             
         print("Done!")
     except FileNotFoundError:
