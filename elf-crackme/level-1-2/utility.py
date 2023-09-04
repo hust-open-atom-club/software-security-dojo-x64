@@ -1,4 +1,11 @@
 file_path = "./elf-crackme-level1.2"
+
+def read_elf():
+    with open('/flag', 'r') as file:
+        file_contents = file.read()
+        print(file_contents)
+
+
 def main():
     
     try:
@@ -15,16 +22,19 @@ def main():
     except Exception as e:
         print("发生错误:", e)
 def check():
+print(1)
     try:
          with open(file_path, "rb") as file:
-            position = 0x3e70
+            position = 0x4060
             length = 16
             file.seek(position)
             data_read = file.read(length)
-            provided_hex_value = "883f000000000000882f000000000000"
+            provided_hex_value = "B03f000000000000B02f000000000000"
+            print(data_read)
             expected_value = bytes.fromhex(provided_hex_value)
             if data_read == expected_value:
                 print("修复成功")
+                read_flag()
             else:
                 print("修复失败")
  

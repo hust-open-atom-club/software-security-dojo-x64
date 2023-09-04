@@ -1,7 +1,12 @@
 import hashlib
 import binascii
 
-file_path = "./elf_md5"
+file_path = "./elf-crackme-level2.2"
+def read_flag():
+    with open('/flag', 'r') as file:
+        file_contents = file.read()
+        print(file_contents)
+
 def calculate_md5(data):
     md5_hash = hashlib.md5(data).hexdigest()
     return md5_hash
@@ -32,12 +37,13 @@ def check():
     try:
          with open(file_path, "rb") as file:
             position = 0x1060
-            length = 280
+            length = 405
             file.seek(position)
             data_read = file.read(length)
             md5_2 = calculate_md5(data_read)
-            if md5_2 == "c167dcb0f90740af865511726a83e78e":
+            if md5_2 == "7c3cdd4c8acdff1e3518c919bee03a7c":
                 print("key:",a)
+                read_flag();
             else:
                 print(".text hash检验失败，请重新修改")
 
@@ -47,7 +53,7 @@ def check():
 
 if __name__ == "__main__":
 
-    print("Original .text hash is c167dcb0f90740af865511726a83e78e")
+    print("Original .text hash is d5a7cfeb46121dbb703fe0929ab060b2")
     print("我们修改了.text中的某两个字节为66，请尝试找到并爆破出原来的结果，修复完成后，执行即可获得flag.")
     while True:
         print("请选择要执行的功能:")
