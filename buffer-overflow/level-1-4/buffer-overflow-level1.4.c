@@ -2,11 +2,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-void test()
-{
-	printf("This is not the right function to print flag\n");
-}
+#include <stdbool.h>
+#include <errno.h>
 
 void init()
 {
@@ -18,10 +15,10 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./buffer-overflow-level1.1!\n");
+	printf("### Welcome to ./buffer-overflow-level1.4!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will directly overflow a function pointer to read flag\n");
+	printf("This challenge will demo a simple data-only attack by overwriting a local boolean variable\n");
 }
 
 void read_flag()
@@ -44,18 +41,21 @@ void read_flag()
 
 int main()
 {
-        void (*fp)() = test;
-	char buffer[0x10];
-        
-        init();
-        
-        print_desc();
+	bool match = false;
+	char buffer[8];
+	int result;
 
-        puts("Give me your input");
-	
+	printf("3 + 5 = ?\n");
 	scanf("%s", buffer); // vulnerable scanf
-        
-        fp();
+	result = atoi(buffer);
+
+	if (match) {
+		read_flag();
+	} else {
+		printf("The provided input is incorrect\n");
+	}
+
+	return 0;
 
 	puts("Bye bye~");
 
