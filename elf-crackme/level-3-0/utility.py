@@ -1,4 +1,5 @@
 #!/opt/pwn.college/python
+
 def main():
     file_path = "./elf-crackme-level3.0"
     
@@ -17,6 +18,11 @@ def main():
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-    print("We have provided a binary with a corrupted PLT table. Please follow the PLT table jump order, use the script, and execute it to obtain the flag."
+    print("###")
+    print("### Welcome to ./elf-crackme-level3.0!")
+    print("###")
+    print("")
+    print("We have provided a binary with a corrupted PLT table.")
+    print("Please follow the PLT table jump order, use the script, and execute it to obtain the flag.")
     main()
 
