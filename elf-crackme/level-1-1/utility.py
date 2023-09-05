@@ -1,20 +1,21 @@
 #!/opt/pwn.college/python
 file_path = "./elf-crackme-level1.1"
-def main():
+def patch():
+    
     
     try:
         with open(file_path, "r+b") as file:
-            position = int(input("请输入要修改的位置（16进制），例如：0x1000："), 16)
-            new_data = int(input("请输入新的 byte 数据（16进制），例如：01："), 16)
+            position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
+            new_data = int(input("[+] Please enter the new byte data (in hexadecimal, e.g., 01): "), 16)
             
             file.seek(position)
             file.write(bytes([new_data]))
             
-        print("修改完成！")
+        print("[+] Modification completed!")
     except FileNotFoundError:
-        print("无法打开文件")
+        print("[-] Unable to open the file")
     except Exception as e:
-        print("发生错误:", e)
+        print("[-] An error occurred:", e)
 def check():
     try:
          with open(file_path, "rb") as file:
@@ -25,32 +26,32 @@ def check():
             provided_hex_value = "400000000000000040000000000000004000000000000000"
             expected_value = bytes.fromhex(provided_hex_value)
             if data_read == expected_value:
-                print("修复成功")
+                print("[+] Repair successful")
             else:
-                print("修复失败")
+                print("[-] Repair failed")
  
     except Exception as e:
-        print("发生错误:", e)
+        print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-    print("我们修改了Program Header 中的某个Offset，VirtAddr，PhysAddr请尝试将他恢复，恢复后执行即可获得flag.")
+    print("We have modified certain Offset, VirtAddr, and PhysAddr in the Program Header. Please try to restore them. After restoring, execute to obtain the flag.")
     while True:
-        print("请选择要执行的功能:")
-        print("1. 修改 ELF 文件")
-        print("2. 检查修复后的内容")
-        print("3. 退出")
+        print("Select the action you want to perform:")
+        print("1. Modify the ELF file")
+        print("2. Check the repaired content")
+        print("3. Exit")
         
-        choice = input("请输入选项数字: ")
+        choice = input("Enter the option number: ")
         
         if choice == "1":
-            main()
+            patch()
         elif choice == "2":
             check()
         elif choice == "3":
-            print("程序已退出。")
+            print("The program has exited.")
             break
         else:
-            print("无效的选项，请重新输入。")
+            print("Invalid option, please enter again.")
 
 
 
