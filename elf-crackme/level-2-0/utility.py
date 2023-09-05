@@ -1,3 +1,4 @@
+#!/opt/pwn.college/python
 import hashlib
 import binascii
 
@@ -36,14 +37,14 @@ def check():
             data_position = 0x3000
             data_length = 24
             position = 0x1120 
-            length = 566
+            length = 677
             file.seek(data_position)
             data = file.read(data_length)
             if calculate_md5(data) == "bab1deb320c6d058403c0700ee4fd711" :
                 file.seek(position)
-                data_read = file.read(length)
-                expected_hash = "b864452bbe590096a2b3c1eb63dc3538"
-                text_hash = calculate_md5(data_read) 
+                text_read = file.read(length)
+                expected_hash = "d5462e782191a76c3ceb2fa96f761797"
+                text_hash = calculate_md5(text_read) 
                 if text_hash == expected_hash:
                     print("[+] Repair successful")
                 else:

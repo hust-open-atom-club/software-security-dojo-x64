@@ -1,6 +1,7 @@
+#!/opt/pwn.college/python
 file_path = "./elf-crackme-level1.2"
 
-def read_elf():
+def read_flag():
     with open('/flag', 'r') as file:
         file_contents = file.read()
         print(file_contents)
@@ -28,7 +29,7 @@ def check():
             file.seek(position)
             data_read = file.read(length)
             provided_hex_value = "B03f000000000000B02f000000000000"
-            print(data_read)
+            #print(data_read)
             expected_value = bytes.fromhex(provided_hex_value)
             if data_read == expected_value:
                 print("[+] Repair successful")
