@@ -52,9 +52,13 @@ def check():
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-
+    print("###")
+    print("### Welcome to ./elf-crackme-level2.2!")
+    print("###")
+    print("")    
     print("Original .text hash is d5a7cfeb46121dbb703fe0929ab060b2")
-    print("We have modified two bytes in the .text segment to 0x66. Please try to find and crack the original result. After completing the repair, execute to obtain the flag.")
+    print("We have modified two bytes in the .text segment to 0x66. Please try to find")
+    print("and crack the original result. After completing the repair, execute to obtain the flag.")
     while True:
         print("Select the action you want to perform:")
         print("1. Modify the ELF file")

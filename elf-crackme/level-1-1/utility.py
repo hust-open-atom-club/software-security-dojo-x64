@@ -1,8 +1,8 @@
 #!/opt/pwn.college/python
+
 file_path = "./elf-crackme-level1.1"
+
 def patch():
-    
-    
     try:
         with open(file_path, "r+b") as file:
             position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
@@ -16,6 +16,7 @@ def patch():
         print("[-] Unable to open the file")
     except Exception as e:
         print("[-] An error occurred:", e)
+
 def check():
     try:
          with open(file_path, "rb") as file:
@@ -34,7 +35,13 @@ def check():
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-    print("We have modified certain Offset, VirtAddr, and PhysAddr in the Program Header. Please try to restore them. After restoring, execute to obtain the flag.")
+    print("###")
+    print("### Welcome to ./elf-crackme-level1.1!")
+    print("###")
+    print("")
+    print("We have modified certain Offset, VirtAddr, and PhysAddr in the Program Header.")
+    print("Please try to restore them. After restoring, execute to obtain the flag.")
+    
     while True:
         print("Select the action you want to perform:")
         print("1. Modify the ELF file")
@@ -52,11 +59,3 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid option, please enter again.")
-
-
-
-
-
-
-
-

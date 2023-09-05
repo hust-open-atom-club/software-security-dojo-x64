@@ -5,9 +5,7 @@ def read_elf():
         file_contents = file.read()
         print(file_contents)
 
-
-def patch():
-    
+def patch():    
     try:
         with open(file_path, "r+b") as file:
             position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
@@ -21,8 +19,8 @@ def patch():
         print("[-] Unable to open the file")
     except Exception as e:
         print("[-] An error occurred:", e)
+
 def check():
-print(1)
     try:
          with open(file_path, "rb") as file:
             position = 0x4060
@@ -42,27 +40,24 @@ print(1)
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-        print("We have modified the Address and Offset of a GOT table entry in the Section Header. Please try to restore them. After restoring, execute to obtain the flag.")
-        print("Select the action you want to perform:")
-        print("1. Modify the ELF file")
-        print("2. Check the repaired content")
-        print("3. Exit")
+    print("###")
+    print("### Welcome to ./elf-crackme-level1.2!")
+    print("###")
+    print("")
+    print("We have modified the Address and Offset of a GOT table entry in the Section Header.")
+    print("Please try to restore them. After restoring, execute to obtain the flag.")
+    print("Select the action you want to perform:")
+    print("1. Modify the ELF file")
+    print("2. Check the repaired content")
+    print("3. Exit")
         
-        choice = input("Enter the option number: ")
+    choice = input("Enter the option number: ")
         
-        if choice == "1":
-            patch()
-        elif choice == "2":
-            check()
-        elif choice == "3":
-            print("The program has exited.")
-            break
-        else:
-            print("Invalid option, please enter again.")
-
-
-
-
-
-
-
+    if choice == "1":
+        patch()
+    elif choice == "2":
+        check()
+    elif choice == "3":
+        print("The program has exited.")
+    else:
+        print("Invalid option, please enter again.")

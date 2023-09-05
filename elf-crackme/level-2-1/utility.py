@@ -3,6 +3,7 @@ import binascii
 
 
 file_path = "./elf-crackme-level2.1"
+
 def calculate_md5(data):
     md5_hash = hashlib.md5(data).hexdigest()
     return md5_hash
@@ -14,8 +15,7 @@ def md5_check(hex_string):
     return md5_result
     print("MD5 Hash:", md5_result)
 
-def patch():
-    
+def patch():    
     try:
         with open(file_path, "r+b") as file:
             position = int(input("请输入要修改的位置（16进制），例如：0x1000："), 16)
@@ -29,6 +29,7 @@ def patch():
         print("无法打开文件")
     except Exception as e:
         print("发生错误:", e)
+
 def check():
     try:
          with open(file_path, "rb") as file:
@@ -48,13 +49,15 @@ def check():
                 else:
                     print("修复失败")
             else :
-                print(".text段hash检验失败，不可以修改text段")
-            
- 
+                print(".text段hash检验失败，不可以修改text段") 
     except Exception as e:
         print("发生错误:", e)
 
 if __name__ == "__main__":
+    print("###")
+    print("### Welcome to ./elf-crackme-level2.1!")
+    print("###")
+    print("")
     print("我们修改了.text 段，请尝试分析代码，并通过utils.py 脚本修改binary中data段完成check，修复完成后，执行binary即可获得flag.")
     while True:
         print("请选择要执行的功能:")
@@ -70,14 +73,7 @@ if __name__ == "__main__":
             check()
         elif choice == "3":
             print("程序已退出。")
+
             break
         else:
             print("无效的选项，请重新输入。")
-
-
-
-
-
-
-
-

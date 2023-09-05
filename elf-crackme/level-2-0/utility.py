@@ -3,6 +3,7 @@ import binascii
 
 
 file_path = "./elf-crackme-level2.0"
+
 def calculate_md5(data):
     md5_hash = hashlib.md5(data).hexdigest()
     return md5_hash
@@ -14,8 +15,7 @@ def md5_check(hex_string):
     return md5_result
     print("MD5 Hash:", md5_result)
 
-def patch():
-    
+def patch():    
     try:
         with open(file_path, "r+b") as file:
             position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
@@ -29,6 +29,7 @@ def patch():
         print("[-] Unable to open the file")
     except Exception as e:
         print("[-] An error occurred:", e)
+
 def check():
     try:
          with open(file_path, "rb") as file:
@@ -55,7 +56,13 @@ def check():
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-    print("We have modified the .text segment. Please analyze the code and use the utility.py script to modify the binary's .text segment to complete the check. After the repair is completed, execute the binary to obtain the flag.")
+    print("###")
+    print("### Welcome to ./elf-crackme-level2.0!")
+    print("###")
+    print("")
+    print("We have modified the .text segment. Please analyze the code and use utility.py")
+    print("to modify the binary's .text segment to complete the check.")
+    print("After the repair is completed, execute the binary to obtain the flag.")
     while True:
         print("Select the action you want to perform:")
         print("1. Modify the ELF file")
@@ -73,10 +80,3 @@ if __name__ == "__main__":
             break
         else:
             print("Invalid option, please enter again.")
-
-
-
-
-
-
-

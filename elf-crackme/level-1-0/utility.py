@@ -24,5 +24,9 @@ def main():
         print("Error occurs", e)
 
 if __name__ == "__main__":
+    print("###")
+    print("### Welcome to ./elf-crackme-level1.0!")
+    print("###")
+    print("")
     main()
 
