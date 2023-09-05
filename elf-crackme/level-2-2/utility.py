@@ -1,3 +1,4 @@
+#!/opt/pwn.college/python
 import hashlib
 import binascii
 
@@ -41,11 +42,11 @@ def check():
             file.seek(position)
             data_read = file.read(length)
             md5_2 = calculate_md5(data_read)
-            if md5_2 == "7c3cdd4c8acdff1e3518c919bee03a7c":
-                print("[+] key:",a)
+            if md5_2 == "d5a7cfeb46121dbb703fe0929ab060b2":
+                print("[+] Modification completed!")
                 read_flag();
             else:
-                print("Hash verification for the .text segment failed. Please modify it again.")
+                print("[-] Hash verification for the .text segment failed. Please modify it again.")
 
  
     except Exception as e:

@@ -1,6 +1,7 @@
+#!/opt/pwn.college/python
 file_path = "./elf-crackme-level1.2"
 
-def read_elf():
+def read_flag():
     with open('/flag', 'r') as file:
         file_contents = file.read()
         print(file_contents)
@@ -22,7 +23,6 @@ def patch():
     except Exception as e:
         print("[-] An error occurred:", e)
 def check():
-print(1)
     try:
          with open(file_path, "rb") as file:
             position = 0x4060
@@ -30,7 +30,7 @@ print(1)
             file.seek(position)
             data_read = file.read(length)
             provided_hex_value = "B03f000000000000B02f000000000000"
-            print(data_read)
+            #print(data_read)
             expected_value = bytes.fromhex(provided_hex_value)
             if data_read == expected_value:
                 print("[+] Repair successful")
@@ -42,7 +42,8 @@ print(1)
         print("[-] An error occurred:", e)
 
 if __name__ == "__main__":
-        print("We have modified the Address and Offset of a GOT table entry in the Section Header. Please try to restore them. After restoring, execute to obtain the flag.")
+    print("We have modified the Address and Offset of a GOT table entry in the Section Header. Please try to restore them. After restoring, execute to obtain the flag.")
+    while True:
         print("Select the action you want to perform:")
         print("1. Modify the ELF file")
         print("2. Check the repaired content")

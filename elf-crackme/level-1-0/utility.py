@@ -1,21 +1,21 @@
 #!/opt/pwn.college/python
-
-def main():
-    file_path = "./elf-crackme-level1.0"
+file_path = "./elf-crackme-level1.0"
     
+def patch():
+        
     try:
         with open(file_path, "r+b") as file:
-            position = 0x4 
-            new_data = 0x2  
+            position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
+            new_data = int(input("[+] Please enter the new byte data (in hexadecimal, e.g., 01): "), 16)
             
             file.seek(position)
-            file.write(new_data.to_bytes(1, byteorder='little')) 
+            file.write(bytes([new_data]))
             
-            
-            position_2 = 0x12
-            new_data_2 = 0x3e
-            file.seek(position_2)
-            file.write(new_data_2.to_bytes(1, byteorder='little'))  
+        print("[+] Modification completed!")
+    except FileNotFoundError:
+        print("[-] Unable to open the file")
+    except Exception as e:
+        print("[-] An error occurred:", e)
             
         print("Done!")
     except FileNotFoundError:
@@ -24,5 +24,5 @@ def main():
         print("Error occurs", e)
 
 if __name__ == "__main__":
-    main()
+    patch()
 
