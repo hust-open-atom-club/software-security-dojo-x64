@@ -1,7 +1,7 @@
-TARGET = shellcode-injection-level1.0
+TARGET = shellcode-injection-level3.0
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-LDFLAGS = -lcapstone -z execstack -fno-stack-protector
+CFLAGS = -Wall -Wextra -Werror  
+LDFLAGS = -z execstack -fPIE -pie -z now -fno-stack-protector
 
 .PHONY: all clean
 
