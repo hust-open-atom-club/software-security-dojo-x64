@@ -366,6 +366,10 @@ modules:
       \
       \
       **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡利用格式化字符串漏洞，泄露栈上存放的 flag 内容"
 
   - id: shellcode-injection
     name: Shellcode Injection
