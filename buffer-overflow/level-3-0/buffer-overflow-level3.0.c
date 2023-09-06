@@ -29,7 +29,7 @@ void read_flag()
 
 	file = fopen("/flag", "r");
 	if (file == NULL) {
-		printf("无法打开文件\n");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 

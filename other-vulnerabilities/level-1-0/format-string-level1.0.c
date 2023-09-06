@@ -15,7 +15,7 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./format-string-level1.0.c!\n");
+	printf("### Welcome to ./format-string-level1.0!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will directly use format-string vulnerability to read flag\n");
