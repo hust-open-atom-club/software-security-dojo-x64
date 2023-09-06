@@ -352,6 +352,16 @@ modules:
     name: Use After Free
     description: |
       释放后使用这一漏洞类型属于实践类内存错误，在一个对象被释放后之后重新使用导致。此处还包含 Invalid Free 和 Double Free。
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 利用悬垂指针读取 /flag
+      \
+      \
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡利用释放后未置空的悬垂指针读取 /flag 的内容"
 
   - id: other-vulnerabilities
     name: Other Vulnerabilities
