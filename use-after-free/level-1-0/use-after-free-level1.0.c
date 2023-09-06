@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <string.h>
 
-#define FLAG_LEN 0x30
+#define FLAG_LEN 0x40
 
 size_t * notebooks[0x10];
 
