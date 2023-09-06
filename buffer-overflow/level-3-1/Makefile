@@ -1,7 +1,7 @@
-TARGET = buffer-overflow-level2.2
+TARGET = buffer-overflow-level3.1
 CC     = gcc
-CFLAGS = -Wall -Wextra -Werror -no-pie -fno-stack-protector
-SECFLAGS =
+CFLAGS = -Wall -Wextra -Werror 
+SECFLAGS = -no-pie -fno-stack-protector
 
 .PHONY: all clean
 
