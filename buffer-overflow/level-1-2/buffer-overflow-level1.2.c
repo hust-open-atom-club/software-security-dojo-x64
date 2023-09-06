@@ -31,7 +31,7 @@ void read_flag(char *filename)
 
 	file = fopen(filename, "r");
 	if (file == NULL) {
-		printf("无法打开文件");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 

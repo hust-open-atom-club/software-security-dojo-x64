@@ -45,7 +45,7 @@ void magic()
 	*(long long *)flag = (long long)&flag + 0x8;
 	file = fopen("/flag", "r");
 	if (file == NULL) {
-		printf("无法打开文件\n");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 

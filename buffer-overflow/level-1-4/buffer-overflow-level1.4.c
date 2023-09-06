@@ -18,7 +18,7 @@ void print_desc()
 	printf("### Welcome to ./buffer-overflow-level1.4!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will demo a simple data-only attack by overwriting a local boolean variable\n");
+	("This challenge will demo a simple data-only attack by overwriting a local boolean variable\n");
 }
 
 void read_flag()
