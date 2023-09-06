@@ -274,7 +274,7 @@ modules:
       - Level 1.4 - 利用栈溢出覆盖局部布尔变量，翻转逻辑来读取 /flag
       - Level 2.0 - 利用堆缓冲区溢出覆盖堆上数据变量，劫持控制流来读取 /flag
       - Level 2.1 - 利用堆缓冲区溢出覆盖堆上函数指针，劫持控制流来读取 /flag
-      - Level 2.2 - 利用 Off-by-one 漏洞覆盖全局数据变量，劫持控制流后读取 /flag
+      - Level 2.2 - 利用 Off-By-Null 漏洞覆盖栈上关键变量，劫持控制流后读取 /flag
       - Level 3.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
       \
       \
@@ -311,7 +311,7 @@ modules:
 
       - id: level-2-2
         name: Level 2.2
-        description: "关于 Off-by-one 漏洞的利用"
+        description: "本关卡需掌握 Off-By-Null 知识覆盖栈上关键变量, 利用后门函数读取 /flag"
       
       - id: level-3-0
         name: Level 3.0
