@@ -1,6 +1,6 @@
-TARGET = format-string-level1.0
+TARGET = use-after-free-level1.0
 CC     = gcc
-CFLAGS = -Wall -Wextra -Werror -Wno-format-security
+CFLAGS = -Wall -Wextra -Werror
 SECFLAGS =
 
 .PHONY: all clean
