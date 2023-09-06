@@ -16,7 +16,7 @@ void print_desc()
 	printf("### Welcome to ./buffer-overflow-level2.2!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will directly use off-by-one vulnerability to read flag\n");
+	printf("This challenge will directly use off-by-null vulnerability to read flag\n");
 }
 
 void read_flag()
@@ -46,11 +46,6 @@ void input_message(char * name)
 	scanf("%256s*c", buf);
 	printf("Copy that, %s\n", buf);
 	puts("Bye bye~");
-}
-
-void foo(char * arg)
-{
-	input_message(arg);
 }
 
 int main()
