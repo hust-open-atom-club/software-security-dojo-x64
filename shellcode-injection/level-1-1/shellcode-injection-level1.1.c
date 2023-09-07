@@ -70,8 +70,7 @@ int main(int argc, char **argv, char **envp)
 
     uint8_t shellcode[0x1000];
     shellcode_mem = (void *)&shellcode;
-    printf("[LEAK] Placing shellcode on the stack at %p!\n", shellcode_mem);
-
+    puts("You need to skip some bytes.Good luck!");
     puts("Reading 0x1000 bytes from stdin.\n");
     shellcode_size = read(0, shellcode_mem, 0x1000);
     assert(shellcode_size > 0);

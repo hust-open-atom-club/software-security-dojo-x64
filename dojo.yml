@@ -362,10 +362,15 @@ modules:
       \
       **关卡等级分布：**
       - Level 1.0 - 利用悬垂指针读取 /flag
+      - Level 1.1 - 利用悬垂指针，结合 ptmalloc2 tcache bin 分配堆内存的基本原理，劫持堆块分配后，读取 /flag
+
     challenges:
       - id: level-1-0
         name: Level 1.0
         description: "本关卡利用释放后未置空的悬垂指针读取 /flag 的内容"
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需掌握 ptmalloc2 tcache bin 分配堆内存的基本原理，利用释放后使用漏洞覆盖堆上关键变量，泄露堆上 /flag 的内容"
 
   - id: other-vulnerabilities
     name: Other Vulnerabilities
@@ -391,14 +396,30 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 本关卡需掌握读取 /flag 的 shellcode 的编写方法
+      - Level 1.1 - 本关卡需掌握重复宏汇编的shellcode的编写方法
+      - Level 2.0 - 本关卡需掌握栈赋值的shellcode的编写方法
+      - Level 3.0 - 本关卡需掌握可见字符的 shellcode 的编写方法
+      - Level 3.1 - 本关卡需掌握敏感字符绕过的 shellcode 的编写方法
+      - Level 3.2 - 本关卡需掌握读取 /flag 的 shellcode 的编写方法
 
     challenges:
       - id: level-1-0
         name: Level 1.0
         description: "本关卡需要直接构造读取flag的shellcode，注入并执行 shellcode 来读取 /flag。"
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需构造重复宏编程，执行 shellcode 来读取 /flag。"
       - id: level-2-0
-        name: Level 1.0
+        name: Level 2.0
+        description: "本关卡过滤空字符，需利用栈赋值，执行 shellcode 来读取 /flag。"
+      - id: level-3-0
+        name: Level 3.0
+        description: "本关卡过滤了不可见字符串，需要利用可见字符串构建，并执行 shellcode 来读取 /flag。"
+      - id: level-3-1
+        name: Level 3.1
+        description: "本关卡过滤了syscall，int 80，sysenter，需要绕过并执行 shellcode 来读取 /flag。"
+      - id: level-3-2
+        name: Level 3.2
         description: "本关卡需利用栈溢出漏洞，注入并执行 shellcode 来读取 /flag。"
 
   - id: return-oriented-programming

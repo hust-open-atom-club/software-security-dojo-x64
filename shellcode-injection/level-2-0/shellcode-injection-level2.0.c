@@ -68,6 +68,7 @@ int main(int argc, char **argv, char **envp)
 
     shellcode_mem = mmap((void *) 0x1cad2000, 0x1000, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_ANON, 0, 0);
     printf("[LEAK] Mapping shellcode memory at %p!\n", shellcode_mem);
+    puts("Do you understand push and pop assignments?");
     assert(shellcode_mem == (void *) 0x1cad2000);
 
     puts("Reading 0x1000 bytes from stdin.\n");
