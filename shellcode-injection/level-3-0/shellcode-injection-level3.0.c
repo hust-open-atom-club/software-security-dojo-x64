@@ -4,6 +4,7 @@
 int main() {
     char buf[0x400];
     int n, i;
+    puts("Do you understand the visible string shellcode?");
     n = read(0, buf, 0x400);
     if (n <= 0) return 0;
     for (i = 0; i < n; i++) {
