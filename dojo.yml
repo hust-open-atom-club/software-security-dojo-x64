@@ -250,15 +250,16 @@ modules:
         description: "本关卡需要掌握 plt 表和 got 表的跳转，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
 
     resources:
+       - name: "Linux ELF 可执行文件"
+         type: lecture
+         # video: "438064585"
+         # playlist: "BV1mj411M7NZ"
+         slides: 8ix3hf4008d04788944d0826f01cb491639b0
        - name: "References"
          type: markdown
          content: |
            - [Concrete Value for fields in ELF format](https://github.com/WolfgangSt/libelf/blob/master/lib/elf_repl.h)
-  #     - name: "Linux ELF"
-  #       type: lecture
-  #       # video: "438064585"
-  #       # playlist: "BV1mj411M7NZ"
-  #       slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
+
 
   - id: buffer-overflow
     name: Buffer Overflow
