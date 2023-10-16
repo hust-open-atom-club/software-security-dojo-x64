@@ -236,7 +236,7 @@ class ASMChallenge(ASMBase):
 
     def trace(self):
         self.start()
-        return (self.rax == self.init_rbx % self.init_rbx + self.init_rcx - self.init_rsi)
+        return (self.rax == self.init_rax % self.init_rbx + self.init_rcx - self.init_rsi)
 
 def main():
     challenge = ASMChallenge()
