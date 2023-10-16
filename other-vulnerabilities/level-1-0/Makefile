@@ -1,6 +1,7 @@
-TARGET = buffer-overflow-level4.0
+TARGET = format-string-level1.0
 CC     = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wno-format-security
+SECFLAGS =
 
 .PHONY: all clean
 

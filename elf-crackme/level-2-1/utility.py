@@ -1,8 +1,10 @@
+#!/opt/pwn.college/python
 import hashlib
 import binascii
 
 
 file_path = "./elf-crackme-level2.1"
+
 def calculate_md5(data):
     md5_hash = hashlib.md5(data).hexdigest()
     return md5_hash
@@ -15,69 +17,64 @@ def md5_check(hex_string):
     print("MD5 Hash:", md5_result)
 
 def patch():
-    
     try:
         with open(file_path, "r+b") as file:
-            position = int(input("请输入要修改的位置（16进制），例如：0x1000："), 16)
-            new_data = int(input("请输入新的 byte 数据（16进制），例如：01："), 16)
+            position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
+            new_data = int(input("[+] Please enter the new byte data (in hexadecimal, e.g., 01): "), 16)
             
             file.seek(position)
             file.write(bytes([new_data]))
             
-        print("修改完成！")
+        print("[+] Modification completed!")
     except FileNotFoundError:
-        print("无法打开文件")
+        print("[-] Unable to open the file")
     except Exception as e:
-        print("发生错误:", e)
+        print("[-] An error occurred:", e)
+
 def check():
     try:
          with open(file_path, "rb") as file:
             text_position = 0x1120
-            text_length = 566
+            text_length = 677
             position = 0x3000
             length = 24
             file.seek(text_position)
             data = file.read(text_length)
-            if calculate_md5(data) == "a9a34acaa2a0bc23109eec05471f3542" :
+            if calculate_md5(data) == "065e467b8789b95859d7d33fd30addeb" :
                 file.seek(position)
                 data_read = file.read(length)
                 expected_hash = "bab1deb320c6d058403c0700ee4fd711"
                 data_hash = calculate_md5(data_read) 
                 if data_hash != expected_hash:
-                    print("修复成功")
+                    print("[+] Modification completed!")
                 else:
-                    print("修复失败")
+                    print("[+] Modification error!")
             else :
-                print(".text段hash检验失败，不可以修改text段")
-            
- 
+                print("Hash verification for the .text segment failed; you cannot modify the text segment.")
     except Exception as e:
-        print("发生错误:", e)
+        print("Error occurs:", e)
 
 if __name__ == "__main__":
-    print("我们修改了.text 段，请尝试分析代码，并通过utils.py 脚本修改binary中data段完成check，修复完成后，执行binary即可获得flag.")
+    print("###")
+    print("### Welcome to ./elf-crackme-level2.1!")
+    print("###")
+    print("")
+    print("We have modified the .text segment. Please analyze the code and use utility.py to modify the data segment")
+    print("in the binary for checking. After completing the repair, execute the binary to obtain the flag.")
     while True:
-        print("请选择要执行的功能:")
-        print("1. 修改 ELF 文件")
-        print("2. 检查修复后的内容")
-        print("3. 退出")
+        print("Select the action you want to perform:")
+        print("1. Modify the ELF file")
+        print("2. Check the repaired content")
+        print("3. Exit")
         
-        choice = input("请输入选项数字: ")
+        choice = input("Enter the option number: ")
         
         if choice == "1":
             patch()
         elif choice == "2":
             check()
         elif choice == "3":
-            print("程序已退出。")
+            print("The program has exited.")
             break
         else:
-            print("无效的选项，请重新输入。")
-
-
-
-
-
-
-
-
+            print("Invalid option, please enter again.")

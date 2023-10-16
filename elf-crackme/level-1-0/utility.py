@@ -1,15 +1,20 @@
 #!/opt/pwn.college/python
-
-def main():
-    file_path = "./elf-crackme-level1.0"
+file_path = "./elf-crackme-level1.0"
     
+def patch():    
     try:
         with open(file_path, "r+b") as file:
-            position = 0x4 
-            new_data = 0x1   # 将要写入的数据设置为0x66 0x66
+            position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
+            new_data = int(input("[+] Please enter the new byte data (in hexadecimal, e.g., 01): "), 16)
             
             file.seek(position)
-            file.write(new_data.to_bytes(1, byteorder='little'))  # 使用little-endian字节顺序写入两个字节
+            file.write(bytes([new_data]))
+            
+        print("[+] Modification completed!")
+    except FileNotFoundError:
+        print("[-] Unable to open the file")
+    except Exception as e:
+        print("[-] An error occurred:", e)
             
         print("Done!")
     except FileNotFoundError:
@@ -18,5 +23,10 @@ def main():
         print("Error occurs", e)
 
 if __name__ == "__main__":
-    main()
+    print("###")
+    print("### Welcome to ./elf-crackme-level1.0!")
+    print("###")
+    print("")
+    patch()
+
 

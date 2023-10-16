@@ -13,7 +13,7 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./buffer-overflow-level1.1!\n");
+	printf("### Welcome to ./buffer-overflow-level1.0!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will directly overflow a local variable to bypass some conditions\n");
@@ -26,7 +26,7 @@ void read_flag()
 
 	file = fopen("/flag", "r");
 	if (file == NULL) {
-		printf("无法打开文件\n");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 

@@ -16,10 +16,10 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./buffer-overflow-level1.3!\n");
+	printf("### Welcome to ./buffer-overflow-level1.2!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will directly overflow a function pointer to read flag\n");
+	printf("This challenge will directly overflow a local string variable to read flag\n");
 }
 
 void read_flag(char *filename)
@@ -31,7 +31,7 @@ void read_flag(char *filename)
 
 	file = fopen(filename, "r");
 	if (file == NULL) {
-		printf("无法打开文件");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 

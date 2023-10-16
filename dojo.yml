@@ -14,15 +14,14 @@ modules:
   - id: simple-demo
     name: Simple Demo
     description: |
-      本模块包含一些简单的演示关卡，帮助学生更快地熟悉当前平台(https://hust.pwn.college)。
+      本模块包含一些简单的演示关卡，帮助学生更快地熟悉当前平台(https://hust.pwn.college)。  
+      **注：为了更有效地解决这些挑战关卡，首先运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
       - Level 1.0 - 直接读取 /flag，并将其打印出来（Python）
       - Level 1.1 - 直接读取 /flag，并将其打印出来（C）
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，首先运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -39,10 +38,12 @@ modules:
       #  playlist: "BV1mj411M7NZ"
         slides: 8ix3h6e02cd34628d4dfe91cb29a7e42cd6b6
 
+
   - id: pwntools-tutorials
     name: Pwntools Tutorials
     description: |
-      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。
+      Pwntools 是一个工具包（包含各种好用的小工具）与软件库，旨在尽可能简化 CTF 比赛的渗透攻击过程，同时尽可能攻击代码的可读性。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
@@ -57,12 +58,8 @@ modules:
       - Level 2.6 - 利用 pwtools asm 利用 for 循环来计算特定公式，结果通过检查后获取 /flag
       - Level 3.0 - 利用 pwtools 循环生成特定输入绕过检查，并读取 /flag
       - 除此之外，pwntools 还有一些其他功能，如EFL解析（elf-crackme 关卡会用到），cyclic（缓冲区溢出关卡会用到）and ，GDB调试等。
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
-      
+
     challenges:
-  
       - id: level-1-0
         name: Level 1.0
         description: "本关卡设置了一些条件，只有通过这些条件才能获得 /flag。"
@@ -70,7 +67,7 @@ modules:
       - id: level-1-1
         name: Level 1.1
         description: "本关卡设置了一些条件，只有通过这些条件才能获得 /flag。"
-  
+
       - id: level-2-0
         name: Level 2.0
         description: "本关卡编写一些汇编指令，设置特定寄存器（如，rax），通过检查后获取 /flag。"
@@ -120,11 +117,13 @@ modules:
           - [Pwntools Tutorials](https://github.com/Gallopsled/pwntools-tutorial)
           - [Pwntools Documentation](https://docs.pwntools.com/en/stable/index.html)
           - [GDB Cheat Sheet](https://darkdust.net/files/GDB%20Cheat%20Sheet.pdf)
-  
+
+
   - id: setuid-backdoor
     name: SetUID Backdoor
     description: |
-      SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。
+      SUID 允许任何拥有文件执行权限的用户，以当前文件所属者（通常是 root）的权限执行该文件。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
@@ -140,9 +139,7 @@ modules:
       - Level 4.0 - 学习 /usr/bin/python 解释器的语法，并编程实现获取 /flag 
       - Level 4.1 - 学习 /usr/bin/perl 解释器的语法，并编程实现获取 /flag 
       - Level 4.2 - 学习 /usr/bin/ruby 解释器的语法，并编程实现获取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -195,18 +192,20 @@ modules:
     resources:
       - name: "Linux 权限管理与SetUID"
         type: lecture
-      #   video: "438064585"
-      #   playlist: "BV1mj411M7NZ"
+      #  video: "438064585"
+      #  playlist: "BV1mj411M7NZ"
         slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
       - name: "References"
         type: markdown
         content: |
           - [Why You Can't Un-Root a Compromised Machine](https://gist.github.com/mudongliang/7b68290c2b4d5da0b7140c8b0e1827d0)
 
+
   - id: elf-crackme
     name: ELF CrakeMe
     description: |
-      学习并修改 ELF 可执行文件格式
+      学习并修改 ELF 可执行文件格式  
+      **注：为了更有效地解决这些挑战关卡，你首先需要执行 utility.py 查看关卡提示，根据提示信息利用 utility.py 修改关卡可执行文件，通过检查后即可获取 flag。**
       \
       \
       **关卡等级分布：**
@@ -218,67 +217,72 @@ modules:
       - Level 2.2 - 编写程序进行遍历，修复关卡可执行文件，通过检查后读取 /flag
       - Level 3.0 - 学习并理解 plt 跳转，修复关卡可执行文件，通过检查后读取 /flag
       - Level 3.1 - 学习并理解 plt，got 跳转，修复关卡可执行文件，通过检查后读取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要执行 utility.py 查看关卡提示，根据提示信息利用 utility.py 修改关卡可执行文件，通过检查后即可获取 flag。**
 
     challenges:
-
       - id: level-1-0
         name: Level 1.0
         description: "本关卡需要掌握 ELF 文件头中 x86 和 x64 之间的区别，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-1-1
         name: Level 1.1
         description: "本关卡需要掌握程序头表中 Offset,VirtAddr,PhysAddr 字段含义，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-1-2
         name: Level 1.2
         description: "本关卡需要掌握节头表中 Offset,VirtAddr,PhysAddr 字段含义，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-2-0
         name: Level 2.0
         description: "本关卡需要掌握 .text 段，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-2-1
         name: Level 2.1
         description: "本关卡需要掌握 .data 段，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-2-2
         name: Level 2.2
         description: "本关卡需要编写程序，爆破相应位置，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-3-0
         name: Level 3.0
         description: "本关卡需要掌握 plt 表的跳转，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
+
       - id: level-3-1
         name: Level 3.1
         description: "本关卡需要掌握 plt 表和 got 表的跳转，使用 utility.py 修复关卡可执行文件后，执行即可获得flag。"
 
     resources:
+       - name: "Linux ELF 可执行文件"
+         type: lecture
+         # video: "438064585"
+         # playlist: "BV1mj411M7NZ"
+         slides: 8ix3hf4008d04788944d0826f01cb491639b0
        - name: "References"
          type: markdown
          content: |
            - [Concrete Value for fields in ELF format](https://github.com/WolfgangSt/libelf/blob/master/lib/elf_repl.h)
-  #     - name: "Linux ELF"
-  #       type: lecture
-  #       # video: "438064585"
-  #       # playlist: "BV1mj411M7NZ"
-  #       slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
+
 
   - id: buffer-overflow
     name: Buffer Overflow
     description: |
-      利用缓冲区溢出漏洞，可以在栈、全局、堆等内存区域上输入精心构造的数据载荷（即，Payload），覆盖关键数据（如，局部变量，函数指针，返回地址等）。
+      利用缓冲区溢出漏洞，可以在栈、全局、堆等内存区域上输入精心构造的数据载荷（即，Payload），覆盖关键数据（如，局部变量，函数指针，返回地址等）。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
       - Level 1.0 - 利用栈溢出覆盖局部变量，通过检查后读取 /flag
       - Level 1.1 - 利用栈溢出覆盖局部函数指针变量，劫持控制流来读取 /flag
-      - Level 1.2 - 利用栈溢出覆盖返回地址，劫持控制流来读取 /flag
+      - Level 1.2 - 利用栈溢出覆盖局部数据指针变量，劫持控制流来读取 /flag
+      - Level 1.3 - 利用栈溢出覆盖返回地址，劫持控制流来读取 /flag
+      - Level 1.4 - 利用栈溢出覆盖局部布尔变量，翻转逻辑来读取 /flag
       - Level 2.0 - 利用堆缓冲区溢出覆盖堆上数据变量，劫持控制流来读取 /flag
       - Level 2.1 - 利用堆缓冲区溢出覆盖堆上函数指针，劫持控制流来读取 /flag
-      - Level 2.2 - 利用 Off-by-one 漏洞覆盖全局数据变量，劫持控制流后读取 /flag
-      - Level 3.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      - Level 3.0 - 利用 Off-By-One 漏洞覆盖栈上数据，通过检查后读取 /flag
+      - Level 3.1 - 利用 Off-By-Null 漏洞覆盖栈上关键变量，劫持控制流后读取 /flag
+      - Level 4.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
+      
     challenges:
-
       - id: level-1-0
         name: Level 1.0
         description: "本关卡需掌握栈布局知识覆盖局部变量，通过检查后读取 /flag。"
@@ -289,11 +293,15 @@ modules:
 
       - id: level-1-2
         name: Level 1.2
-        description: "本关卡需掌握栈布局知识覆盖局部变量，利用后门函数后读取 /flag。"
+        description: "本关卡需掌握栈布局知识覆盖局部数据指针变量，利用后门函数后读取 /flag。"
 
       - id: level-1-3
         name: Level 1.3
         description: "本关卡需掌握栈布局知识覆盖函数返回地址，劫持控制流后利用后门函数后读取 /flag。"
+
+      - id: level-1-4
+        name: Level 1.4
+        description: "本关卡需掌握栈布局知识覆盖局部布尔变量，翻转逻辑后利用后门函数后读取 /flag。"
 
       - id: level-2-0
         name: Level 2.0
@@ -303,12 +311,16 @@ modules:
         name: Level 2.1
         description: "本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数 edit_notebook 覆盖堆上函数指针后读取 /flag。"
 
-      - id: level-2-2
-        name: Level 2.2
-        description: "关于 Off-by-one 漏洞的利用"
-      
       - id: level-3-0
         name: Level 3.0
+        description: "本关卡需掌握 Off-By-One 知识覆盖栈上关键变量, 通过暴力破解利用后门函数读取 /flag"
+
+      - id: level-3-1
+        name: Level 3.1
+        description: "本关卡需掌握 Off-By-Null 知识覆盖栈上关键变量, 利用后门函数读取 /flag"
+      
+      - id: level-4-0
+        name: Level 4.0
         description: "本关卡在没有源码辅助的基础上，使用 cylic 和 coredump 基础知识自动化寻找返回地址，利用栈溢出来读取 /flag。"
 
     resources:
@@ -320,7 +332,8 @@ modules:
   - id: integer-overflow
     name: Integer Overflow
     description: |
-      整数溢出出现于数值无法被对应的数据类型所表示，通常，整数溢出可能导致缓冲区溢出。
+      整数溢出出现于数值无法被对应的数据类型所表示，通常，整数溢出可能导致缓冲区溢出。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
@@ -330,9 +343,7 @@ modules:
       - Level 2.1 - 结合整数溢出中的计算溢出与缓冲区溢出读取 /flag
       - Level 3.0 - 利用整数溢出中的符号溢出读取 /flag
       - Level 3.1 - 结合整数溢出中的符号溢出与缓冲区溢出读取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -345,45 +356,77 @@ modules:
   - id: use-after-free
     name: Use After Free
     description: |
-      释放后使用这一漏洞类型属于实践类内存错误，在一个对象被释放后之后重新使用导致。此处还包含 Invalid Free 和 Double Free。
+      释放后使用这一漏洞类型属于实践类内存错误，在一个对象被释放后之后重新使用导致。此处还包含 Invalid Free 和 Double Free。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      \
+      \
+      **关卡等级分布：**
+      - Level 1.0 - 利用悬垂指针读取 /flag
+      - Level 1.1 - 利用悬垂指针，结合 ptmalloc2 tcache bin 分配堆内存的基本原理，劫持堆块分配后，读取 /flag
+
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡利用释放后未置空的悬垂指针读取 /flag 的内容"
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需掌握 ptmalloc2 tcache bin 分配堆内存的基本原理，利用释放后使用漏洞覆盖堆上关键变量，泄露堆上 /flag 的内容"
 
   - id: other-vulnerabilities
     name: Other Vulnerabilities
     description: |
-      学习一些其他安全漏洞，如格式化字符串，未初始化漏洞，信息泄露，Off-by-one 漏洞。
+      学习一些其他安全漏洞，如格式化字符串，未初始化漏洞，信息泄露漏洞。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
       - Level 1.0 - 关于格式化字符串
       - Level 2.0 - 关于未初始化漏洞
-      - Level 3.0 - 关于信息泄露
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      
+    challenges:
+      - id: level-1-0
+        name: Level 1.0
+        description: "本关卡利用格式化字符串漏洞，泄露栈上存放的 flag 内容"
 
   - id: shellcode-injection
     name: Shellcode Injection
     description: |
       通过注入精心构造的 shellcode，获得程序原有行为以外的破坏性能力。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**  
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 本关卡需掌握读取 /flag 的 shellcode 的编写方法
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+      - Level 1.1 - 本关卡需掌握重复宏汇编的shellcode的编写方法
+      - Level 2.0 - 本关卡需掌握栈赋值的shellcode的编写方法
+      - Level 3.0 - 本关卡需掌握可见字符的 shellcode 的编写方法
+      - Level 3.1 - 本关卡需掌握敏感字符绕过的 shellcode 的编写方法
+      - Level 3.2 - 本关卡需掌握读取 /flag 的 shellcode 的编写方法
+
     challenges:
       - id: level-1-0
         name: Level 1.0
         description: "本关卡需要直接构造读取flag的shellcode，注入并执行 shellcode 来读取 /flag。"
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡需构造重复宏编程，执行 shellcode 来读取 /flag。"
       - id: level-2-0
-        name: Level 1.0
+        name: Level 2.0
+        description: "本关卡过滤空字符，需利用栈赋值，执行 shellcode 来读取 /flag。"
+      - id: level-3-0
+        name: Level 3.0
+        description: "本关卡过滤了不可见字符串，需要利用可见字符串构建，并执行 shellcode 来读取 /flag。"
+      - id: level-3-1
+        name: Level 3.1
+        description: "本关卡过滤了syscall，int 80，sysenter，需要绕过并执行 shellcode 来读取 /flag。"
+      - id: level-3-2
+        name: Level 3.2
         description: "本关卡需利用栈溢出漏洞，注入并执行 shellcode 来读取 /flag。"
 
   - id: return-oriented-programming
     name: Return Oriented Programming
     description: |
-      ROP(Return Oriented Programming) 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。此处包含 ret2libc 攻击技术。
+      ROP(Return Oriented Programming) 通过控制程序栈上数据串连 gadgets（如，末尾为 ret 指令的微小代码片段）来达到图灵完备的功能。  
+      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
       \
       \
       **关卡等级分布：**
@@ -393,9 +436,7 @@ modules:
       - Level 2.2 - 本关卡需学习 ret2libc，泄露并利用 libc 函数，构造 ROP 链来读取 /flag
       - Level 2.3 - 本关卡需学习 ret2libc，利用缓冲区溢出和格式化字符串漏洞，构造 ROP 链来读取 /flag
       - Level 2.4 - 本关卡需学习 ret2libc，仅利用格式化字符串漏洞，绕过保护机制，构造 ROP 链来读取 /flag
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+
     challenges:
       - id: level-1-0
         name: Level 1.0
@@ -421,19 +462,19 @@ modules:
         name: Level 2.4
         description: "本关卡需学习 ret2libc，仅利用格式化字符串漏洞，绕过保护机制，构造 ROP 链来读取 /flag"
 
-  - id: mitigation-bypass
-    name: Mitigation Bypass
-    description: |
-      学习与绕过一些安全防御机制，如栈保护（Stack Protector），地址空间随机化（ASLR），数据执行保护（DEP/NX）
-      \
-      \
-      **关卡等级分布：**
-      - Level 1.0 - 关于栈保护
-      - Level 2.0 - 关于地址随机化与 PIE
-      - Level 3.0 - 关于数据执行保护
-      \
-      \
-      **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
+  # - id: mitigation-bypass
+  #   name: Mitigation Bypass
+  #   description: |
+  #     学习与绕过一些安全防御机制，如栈保护（Stack Protector），地址空间随机化（ASLR），数据执行保护（DEP/NX）
+  #     \
+  #     \
+  #     **关卡等级分布：**
+  #     - Level 1.0 - 关于栈保护
+  #     - Level 2.0 - 关于地址随机化与 PIE
+  #     - Level 3.0 - 关于数据执行保护
+  #     \
+  #     \
+  #     **注：为了更有效地解决这些挑战关卡，你首先需要运行 /challenge 目录下的挑战题目，随后根据提示完成挑战。**
 
   # - id: non-control-data-attacks
   #   name: Non-Control-Data Attacks

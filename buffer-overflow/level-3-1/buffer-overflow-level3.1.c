@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 void init()
 {
@@ -15,19 +16,17 @@ void print_desc()
 	printf("### Welcome to ./buffer-overflow-level2.2!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will directly use off-by-one vulnerability to read flag\n");
+	printf("This challenge will directly use off-by-null vulnerability to read flag\n");
 }
 
-void read_flag(char *filename)
+void read_flag()
 {
 	char flag[100];
 	FILE *file;
 
-	printf("filename %s\n", filename);
-
-	file = fopen(filename, "r");
+	file = fopen("/flag", "r");
 	if (file == NULL) {
-		printf("无法打开文件");
+		printf("[-] cannot open\n");
 		exit(-1);
 	}
 
@@ -38,15 +37,24 @@ void read_flag(char *filename)
 	fclose(file);
 }
 
+void input_message(char * name) 
+{
+	char buf[0x100];
+
+	printf("Hello, %s\n", name);
+	puts("Say something to me:");
+	scanf("%256s*c", buf);
+	printf("Copy that, %s\n", buf);
+	puts("Bye bye~");
+}
+
 int main()
 {
-	char buffer[0x10];
-        
-        init();
-        
+	char name[0x20];
         print_desc();
-
-	puts("Bye bye~");
+	puts("Give me your name:");
+	read(0, name, 0x20);
+        input_message(name);
 
 	return 0;
 }

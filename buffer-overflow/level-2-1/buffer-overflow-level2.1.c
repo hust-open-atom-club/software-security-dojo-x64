@@ -214,11 +214,21 @@ void menu()
         puts("Choice >> ");
 }
 
+void print_desc()
+{
+	printf("###\n");
+	printf("### Welcome to ./buffer-overflow-level2.1!\n");
+	printf("###\n");
+	printf("\n");
+	printf("This challenge will overflow a function pointer on heap to read flag\n");
+}
+
 int main()
 {
         int choice, flag = 1;
 
         init();
+	print_desc();
         puts("dangdang777 has a magic notebook."); 
 	puts("how can you use it to get flag?");
 
