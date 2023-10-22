@@ -17,9 +17,19 @@ void init()
 
 int read_int()
 {
-	char buf[0x10];
-	read(0, buf, 0x10);
-	return atoi(buf);
+    	char buf[0x10];
+    	char *endptr;
+    	long long val;
+    	read(0, buf, sizeof(buf) - 1);
+    	buf[sizeof(buf) - 1] = '\0';
+    	val = strtoll(buf, &endptr, 10);
+    	if (endptr == buf) {
+        	exit(-1);
+   	}
+    	if (val < INT_MIN || val > INT_MAX) {
+    	    	exit(-1);
+   	}
+   	return (int)val;
 }
 
 void read_flag()
