@@ -60,7 +60,7 @@ void create_notebook()
 		return;
 	}
 	
-	book = malloc(sizeof(notebook));
+	book = (notebook *)malloc(sizeof(notebook));
 	if (book == NULL) {
 		puts("malloc error");
 		exit(-1);
