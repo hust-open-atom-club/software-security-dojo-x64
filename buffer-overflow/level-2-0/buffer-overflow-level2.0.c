@@ -54,7 +54,7 @@ void read_flag(char * filename)
 
 void create_notebook()
 {
-	mybook = malloc(sizeof(notebook));
+	mybook = (notebook *)malloc(sizeof(notebook));
 	if (mybook == NULL) {
 		puts("malloc error");
 		exit(-1);
