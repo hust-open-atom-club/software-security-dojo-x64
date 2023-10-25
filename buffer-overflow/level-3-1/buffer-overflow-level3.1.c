@@ -13,7 +13,7 @@ void init()
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./buffer-overflow-level2.2!\n");
+	printf("### Welcome to ./buffer-overflow-level3.1!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will directly use off-by-null vulnerability to read flag\n");

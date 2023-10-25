@@ -380,13 +380,18 @@ modules:
       \
       \
       **关卡等级分布：**
-      - Level 1.0 - 关于格式化字符串
-      - Level 2.0 - 关于未初始化漏洞
+      - Level 1.0 - 关于格式化字符串读取
+      - Level 1.1 - 关于格式化字符串写入
       
     challenges:
       - id: level-1-0
         name: Level 1.0
         description: "本关卡利用格式化字符串漏洞，泄露栈上存放的 flag 内容"
+    challenges:
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡利用格式化字符串漏洞，修改内存中的值，从而通过判断获取flag内容"
+               
 
   - id: shellcode-injection
     name: Shellcode Injection

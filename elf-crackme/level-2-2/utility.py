@@ -42,7 +42,8 @@ def check():
             file.seek(position)
             data_read = file.read(length)
             md5_2 = calculate_md5(data_read)
-            if md5_2 == "d5a7cfeb46121dbb703fe0929ab060b2":
+            print("The current hash is", md5_2)
+            if md5_2 == "ba4f77d33e8961855bda04916d50f802":
                 print("[+] Modification completed!")
                 read_flag();
             else:
@@ -57,9 +58,9 @@ if __name__ == "__main__":
     print("### Welcome to ./elf-crackme-level2.2!")
     print("###")
     print("")    
-    print("Original .text hash is d5a7cfeb46121dbb703fe0929ab060b2")
-    print("We have modified two bytes in the .text segment to 0x66. Please try to find")
-    print("and crack the original result. After completing the repair, execute to obtain the flag.")
+    print("Original .text hash is ba4f77d33e8961855bda04916d50f802")
+    print("We changed two bytes in the .text segment to 0x9090. Please try to find")
+    print("and crack the original result. After completing the repair, execute the check function to get the flag.")
     while True:
         print("Select the action you want to perform:")
         print("1. Modify the ELF file")
