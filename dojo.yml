@@ -348,7 +348,9 @@ modules:
       - id: level-1-0
         name: Level 1.0
         description: "本关卡利用整数溢出中的宽度溢出，通过检查后读取 /flag。"
-
+      - id: level-1-1
+        name: Level 1.1
+        description: "本关卡结合整数溢出中的宽度溢出与缓冲区溢出读取 /flag。"
       - id: level-2-1
         name: Level 2.1
         description: "本关卡利用整数溢出中的计算溢出，结合缓冲区溢出，劫持关键 hook 函数，最终利用后门函数读取 /flag。"
