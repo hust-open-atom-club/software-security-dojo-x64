@@ -6,10 +6,10 @@
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./integer-overflow-level1.0!\n");
+	printf("### Welcome to ./integer-overflow-level1.1!\n");
 	printf("###\n");
 	printf("\n");
-	printf("This challenge will use integer overflow to bypass some checks, and print the flag\n");
+	printf("This challenge will use integer overflow and buffer overflow to print the flag\n");
 }
 
 unsigned short read_short()
