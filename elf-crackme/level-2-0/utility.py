@@ -24,7 +24,7 @@ def patch():
 
             if position == 0x1328:
                 print("[-] Can not modify this the value of this positon!")
-                continue
+                return
             
             file.seek(position)
             file.write(bytes([new_data]))
