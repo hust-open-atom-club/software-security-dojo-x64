@@ -1,7 +1,7 @@
 TARGET = integer-overflow-level1.1
 CC     = gcc
 CFLAGS = -Wall -Wextra -Werror
-SECFLAGS = -fno-stack-protector
+SECFLAGS = -no-pie -fno-stack-protector
 
 .PHONY: all clean
 
