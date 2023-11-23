@@ -21,6 +21,10 @@ def patch():
         with open(file_path, "r+b") as file:
             position = int(input("[+] Please enter the position to modify (in hexadecimal, e.g., 0x1000): "), 16)
             new_data = int(input("[+] Please enter the new byte data (in hexadecimal, e.g., 01): "), 16)
+
+            if position == 0x1328:
+                print("[-] Can not modify this the value of this positon!")
+                return
             
             file.seek(position)
             file.write(bytes([new_data]))
