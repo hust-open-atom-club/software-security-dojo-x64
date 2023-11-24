@@ -42,24 +42,21 @@ void read_flag()
 	fclose(fp);
 }
 
-void vuln_func(char *buffer, unsigned short index)
+void vuln_func(unsigned short index)
 {
-	char buf[0x108];
-	memcpy(buf, buffer, index);
+	char buf[0x100];
+	read(0, buf, index);
 }
 
 int main()
 {
-	char buffer[0x200];
 	unsigned char s;
 	unsigned short i;
-
 	print_desc();
 
         puts("Give me your input");
 	i = read_short();
 	puts("Give me your payload");
-	scanf("%511s", buffer);
 
 	s = i; // integer overflow - width
 
@@ -69,7 +66,7 @@ int main()
 	}
 
 	if ((i >= 80) && (s != i)) {
-		vuln_func(buffer, i);
+		vuln_func(i);
 	} else {
 	 	printf("Please leverage the underlying integer overflow to bypass the condition\n");
 	}
