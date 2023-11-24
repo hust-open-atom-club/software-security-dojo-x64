@@ -5,7 +5,7 @@
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./integer-overflow-level1.0!\n");
+	printf("### Welcome to ./integer-overflow-level2.0!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will use integer overflow to bypass some checks, and print the flag\n");
