@@ -73,7 +73,7 @@ int main()
 		result = false;
 	}
 
-	if (!result)
+	if (result)
 		print_flag();
 	else
 	 	printf("Please leverage the underlying integer overflow to bypass the condition\n");
