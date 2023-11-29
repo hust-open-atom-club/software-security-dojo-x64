@@ -173,7 +173,7 @@ void show_notebook()
 	}
 
 	book = notebooks[idx];
-	((void (*) (void *content))book->show)(book->content);
+	((void (*) (void *content))book->show)(book->name);
 }
 
 void gift()
