@@ -10,7 +10,7 @@ int init(){
 }
 
 int fmt_func(){
-	char buf[100];
+	char buf[0x100];
 	int flag=0;
  	puts("Please modify the flag value by fmt  vulnerability to get a shell");
 	while(1){
