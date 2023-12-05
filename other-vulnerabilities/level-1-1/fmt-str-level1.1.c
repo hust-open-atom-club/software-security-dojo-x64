@@ -18,11 +18,34 @@ int fmt_func(){
 		read(0,buf,0x100);
 		printf(buf);
 		if(flag == 100 ){
-			system("/bin/sh");	
+			read_flag();	
 		}
 	}
 	return 0;
 	
+}
+
+void read_flag()
+{
+	char *p;
+	FILE *fp;
+	char flag[100];
+
+	fp = fopen("/flag", "r");
+
+	if (!fp) {
+		perror("[-] fopen failed");
+	}
+
+	p = fgets(flag, sizeof(flag), fp);
+	if (!p) {
+		perror("[-] fgets failed");
+		fclose(fp);
+	}
+	
+	printf("%s", flag);
+
+	fclose(fp);
 }
 
 int main(){
