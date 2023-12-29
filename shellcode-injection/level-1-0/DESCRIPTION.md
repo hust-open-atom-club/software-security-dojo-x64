@@ -1,0 +1,1 @@
+本关卡需要直接构造读取flag的shellcode，注入并执行 shellcode 来读取 /flag。
