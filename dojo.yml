@@ -280,7 +280,7 @@ modules:
       - Level 2.1 - 利用堆缓冲区溢出覆盖堆上函数指针，劫持控制流来读取 /flag
       - Level 3.0 - 利用 Off-By-One 漏洞覆盖栈上数据，通过检查后读取 /flag
       - Level 3.1 - 利用 Off-By-Null 漏洞覆盖栈上关键变量，劫持控制流后读取 /flag
-      - Level 4.0 - 利用 cylic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
+      - Level 4.0 - 利用 cyclic 和 coredump 来自动计算返回地址的位置，劫持控制流后读取 /flag
       
     challenges:
       - id: level-1-0
@@ -321,7 +321,7 @@ modules:
       
       - id: level-4-0
         name: Level 4.0
-        description: "本关卡在没有源码辅助的基础上，使用 cylic 和 coredump 基础知识自动化寻找返回地址，利用栈溢出来读取 /flag。"
+        description: "本关卡在没有源码辅助的基础上，使用 cyclic 和 coredump 基础知识自动化寻找返回地址，利用栈溢出来读取 /flag。"
 
     resources:
       - name: "References"
@@ -403,6 +403,7 @@ modules:
       \
       \
       **关卡等级分布：**
+      - Level 1.0 - 本关卡需掌握直接构造shellcode的编写方法
       - Level 1.1 - 本关卡需掌握重复宏汇编的shellcode的编写方法
       - Level 2.0 - 本关卡需掌握栈赋值的shellcode的编写方法
       - Level 3.0 - 本关卡需掌握可见字符的 shellcode 的编写方法
