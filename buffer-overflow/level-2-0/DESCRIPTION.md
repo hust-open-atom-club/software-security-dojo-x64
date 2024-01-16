@@ -1,0 +1,1 @@
+本关卡需掌握堆溢出知识覆盖堆上数据变量，利用后门函数 edit_notebook 和 read_notebook 后读取 /flag。
