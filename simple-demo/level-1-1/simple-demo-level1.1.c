@@ -5,7 +5,7 @@
 void print_desc()
 {
 	printf("###\n");
-	printf("### Welcome to ./simple-demo-level1.0!\n");
+	printf("### Welcome to ./simple-demo-level1.1!\n");
 	printf("###\n");
 	printf("\n");
 	printf("This challenge will directly read /flag and print it out.\n");
