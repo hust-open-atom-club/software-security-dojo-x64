@@ -12,7 +12,7 @@ Pwntools 是一个工具包（包含各种好用的小工具）与软件库，�
 - Level 2.5 - 利用 pwtools asm 利用 if 语句来计算特定公式，结果通过检查后获取 /flag
 - Level 2.6 - 利用 pwtools asm 利用 for 循环来计算特定公式，结果通过检查后获取 /flag
 - Level 3.0 - 利用 pwtools 循环生成特定输入绕过检查，并读取 /flag
-- 除此之外，pwntools 还有一些其他功能，如EFL解析（elf-crackme 关卡会用到），cyclic（缓冲区溢出关卡会用到）and ，GDB调试等。
+- 除此之外，pwntools 还有一些其他功能，如 ELF 解析（elf-crackme 关卡会用到），cyclic（缓冲区溢出关卡会用到）以及 GDB 调试等。
 
 
 References
