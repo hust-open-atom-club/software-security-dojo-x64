@@ -5,12 +5,12 @@ name: Fall 2023 - 软件安全
 description: |
   绝对安全的软件系统现在不存在，将来也不会存在。
 
-type: archive
+type: course
 
 award:
   emoji: Forest_Badge
 
-comparator: 2500
+comparator: 9998
 
 modules:
   - id: simple-demo
