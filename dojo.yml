@@ -34,10 +34,10 @@ modules:
     resources:
       - name: "0 课程要求"
         type: lecture
-        slides: jy07537f58c4f6b844afd9573c550fb30322b
+        slides: 0-requirements
       - name: "1 软件安全概论"
         type: lecture
-        slides: jy075f576dfa40e2a40ae94a23e1e6c5bc3fc
+        slides: 1-introduction
 
   - id: pwntools-tutorials
     name: Pwntools Tutorials
@@ -105,12 +105,12 @@ modules:
         type: lecture
         video: "405113607"
         playlist: "BV1oG411o7A4"
-        slides: 8ix3hd077c6d708884e81bfe938af6896532d
+        slides: 2-pwntools
       - name: "gdb 结合 pwntools 调试教程"
         type: lecture
         video: "532863345"
         playlist: "BV1Du411N7c9"
-        slides: 8ix3h99526e066f1646c9811a13688f6e7efb
+        slides: 2-gdb
       - name: "References"
         type: markdown
         content: |
@@ -192,9 +192,7 @@ modules:
     resources:
       - name: "Linux 权限管理与SetUID"
         type: lecture
-      #  video: "438064585"
-      #  playlist: "BV1mj411M7NZ"
-        slides: 8ix3h81318f480f304ea3a8d2d4e9f1188e48
+        slides: 2-ELF
       - name: "References"
         type: markdown
         content: |
@@ -254,9 +252,7 @@ modules:
     resources:
        - name: "Linux ELF 可执行文件"
          type: lecture
-         # video: "438064585"
-         # playlist: "BV1mj411M7NZ"
-         slides: 8ix3hf4008d04788944d0826f01cb491639b0
+         slides: 2-ELF
        - name: "References"
          type: markdown
          content: |
